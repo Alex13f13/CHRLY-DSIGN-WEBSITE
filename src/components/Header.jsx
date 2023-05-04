@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 import { paths } from "../router/paths";
-import ThemeToggleButton from "../styles/ThemeToggleButton";
+import Button from "./Button";
+import { useTheme } from "../styles/ThemeContext";
 
 export default function Header() {
+	const { toggleTheme, theme } = useTheme();
 	return (
 		<div>
-			<ThemeToggleButton />
+			<Button onClick={toggleTheme} theme={theme}>
+				Cambiar tema
+			</Button>
 			<ul>
 				<li>
 					<Link to={paths.landing}>Landing</Link>

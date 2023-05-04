@@ -1,5 +1,5 @@
+// src/components/GenericButton.js
 import styled from "styled-components";
-import { useTheme } from "./ThemeContext";
 
 const StyledButton = styled.button`
 	font-size: 1rem;
@@ -16,14 +16,12 @@ const StyledButton = styled.button`
 	}
 `;
 
-const ThemeToggleButton = () => {
-	const { theme, toggleTheme } = useTheme();
-
+const Button = ({ onClick, theme, children }) => {
 	return (
-		<StyledButton theme={theme} onClick={toggleTheme}>
-			Cambiar tema
+		<StyledButton onClick={onClick} theme={theme}>
+			{children}
 		</StyledButton>
 	);
 };
 
-export default ThemeToggleButton;
+export default Button;
