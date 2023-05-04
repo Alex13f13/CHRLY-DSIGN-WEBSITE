@@ -1,0 +1,48 @@
+[
+	{
+		"title": "SPLAYS APP",
+		"subtitles": ["Space Theme", "Planets, Ships, etc.", "Digital Brand", "Visual Identity", "Categories", "WebApp · Design / Development"],
+		"images": [
+			"https://s3.amazonaws.com/ionic-io-static/3c5f7f6c-1e9d-4b0e-9b0a-9b0b0b0b0b0b_1.jpg",
+			"https://s3.amazonaws.com/ionic-io-static/3c5f7f6c-1e9d-4b0e-9b0a-9b0b0b0b0b0b_2.jpg",
+			"https://s3.amazonaws.com/ionic-io-static/3c5f7f6c-1e9d-4b0e-9b0a-9b0b0b0b0b0b_3.jpg",
+			"https://s3.amazonaws.com/ionic-io-static/3c5f7f6c-1e9d-4b0e-9b0a-9b0b0b0b0b0b_4.jpg",
+			"https://s3.amazonaws.com/ionic-io-static/3c5f7f6c-1e9d-4b0e-9b0a-9b0b0b0b0b0b_5.jpg",
+			"https://s3.amazonaws.com/ionic-io-static/3c5f7f6c-1e9d-4b0e-9b0a-9b0b0b0b0b0b_6.jpg",
+			"https://s3.amazonaws.com/ionic-io-static/3c5f7f6c-1e9d-4b0e-9b0a-9b0b0b0b0b0b_7.jpg",
+			"https://s3.amazonaws.com/ionic-io-static/3c5f7f6c-1e9d-4b0e-9b0a-9b0b0b0b0b0b_8.jpg",
+			"https://s3.amazonaws.com/ionic-io-static/3c5f7f6c-1e9d-4b0e-9b0a-9b0b0b0b0b0b_9.jpg",
+			"https://s3.amazonaws.com/ionic-io-static/3c5f7f6c-1e9d-4b0e-9b0a-9b0b0b0b0b0b_10.jpg"
+		],
+		"descriptions": [
+			"Splays is a space-travelling app where you have to solve a challenge with no instructions, just your instinc, to be able to travel to the desired planet.",
+			"BRIEF",
+			"FootSync is part of a bigger project called Footlight Square. This project implements the use of interactive lights to offer, among others, cognitive games to prevent the appearance of neurological diseases. FootSync responds to the need of being able to benefit from what Footlight has to offer when being away; providing access to the cognitive games and brain-capacities tests, keeping track of your progress, synchronizing your stats, registering on activities, etc.",
+			"CREATIVE CHALLENGE",
+			"The most challenging part of this project was transferring the appeal and feeling of using real interactive lights, into an App / Website, in a way that could capture the essence and beauty of the interaction, but avoid producing an overwhelming and exhausting experience. That led to extreme caution when selecting the visual elements and the way they would be used in the interface, resulting in an eye-catching appearance which turned out to be one of the most characteristic things of the project."
+		]
+	},
+	{
+		"title": "TABU FILMS",
+		"subtitles": ["Space Theme", "Planets, Ships, etc.", "Digital Brand", "Visual Identity", "Categories", "WebApp · Design / Development"],
+		"images": [
+			"https://s3.amazonaws.com/ionic-io-static/3c5f7f6c-1e9d-4b0e-9b0a-9b0b0b0b0b0b_1.jpg",
+			"https://s3.amazonaws.com/ionic-io-static/3c5f7f6c-1e9d-4b0e-9b0a-9b0b0b0b0b0b_2.jpg",
+			"https://s3.amazonaws.com/ionic-io-static/3c5f7f6c-1e9d-4b0e-9b0a-9b0b0b0b0b0b_3.jpg",
+			"https://s3.amazonaws.com/ionic-io-static/3c5f7f6c-1e9d-4b0e-9b0a-9b0b0b0b0b0b_4.jpg",
+			"https://s3.amazonaws.com/ionic-io-static/3c5f7f6c-1e9d-4b0e-9b0a-9b0b0b0b0b0b_5.jpg",
+			"https://s3.amazonaws.com/ionic-io-static/3c5f7f6c-1e9d-4b0e-9b0a-9b0b0b0b0b0b_6.jpg",
+			"https://s3.amazonaws.com/ionic-io-static/3c5f7f6c-1e9d-4b0e-9b0a-9b0b0b0b0b0b_7.jpg",
+			"https://s3.amazonaws.com/ionic-io-static/3c5f7f6c-1e9d-4b0e-9b0a-9b0b0b0b0b0b_8.jpg",
+			"https://s3.amazonaws.com/ionic-io-static/3c5f7f6c-1e9d-4b0e-9b0a-9b0b0b0b0b0b_9.jpg",
+			"https://s3.amazonaws.com/ionic-io-static/3c5f7f6c-1e9d-4b0e-9b0a-9b0b0b0b0b0b_10.jpg"
+		],
+		"descriptions": [
+			"Splays is a space-travelling app where you have to solve a challenge with no instructions, just your instinc, to be able to travel to the desired planet.",
+			"BRIEF",
+			"FootSync is part of a bigger project called Footlight Square. This project implements the use of interactive lights to offer, among others, cognitive games to prevent the appearance of neurological diseases. FootSync responds to the need of being able to benefit from what Footlight has to offer when being away; providing access to the cognitive games and brain-capacities tests, keeping track of your progress, synchronizing your stats, registering on activities, etc.",
+			"CREATIVE CHALLENGE",
+			"The most challenging part of this project was transferring the appeal and feeling of using real interactive lights, into an App / Website, in a way that could capture the essence and beauty of the interaction, but avoid producing an overwhelming and exhausting experience. That led to extreme caution when selecting the visual elements and the way they would be used in the interface, resulting in an eye-catching appearance which turned out to be one of the most characteristic things of the project."
+		]
+	}
+]

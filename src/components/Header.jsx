@@ -14,6 +14,15 @@ export default function Header() {
 				<li>
 					<Link to={paths.legal}>Legal</Link>
 				</li>
+				<li>
+					<Link to={paths.workDetails}>Work Details</Link>
+				</li>
+				<li>
+					<Link to={`${paths.workDetails}?workId=0`}>Work 1</Link>
+				</li>
+				<li>
+					<Link to={`${paths.workDetails}?workId=1`}>Work 2</Link>
+				</li>
 			</ul>
 		</nav>
 	);

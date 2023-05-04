@@ -4,6 +4,7 @@ import AboutUs from "../pages/AboutUs";
 import Landing from "../pages/Landing";
 import Legal from "../pages/Legal";
 import NotFound from "./NotFound";
+import WorkDetails from "../pages/WorkDetails";
 
 export default function Router() {
 	return (
@@ -11,6 +12,7 @@ export default function Router() {
 			<Route path={paths.landing} element={<Landing />} index />
 			<Route path={paths.aboutUs} element={<AboutUs />} />
 			<Route path={paths.legal} element={<Legal />} />
+			<Route path={paths.workDetails} element={<WorkDetails />} />
 			<Route path="*" element={<NotFound />} />
 		</Routes>
 	);

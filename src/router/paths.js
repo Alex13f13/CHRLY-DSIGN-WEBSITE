@@ -1,5 +1,6 @@
 export const paths = {
 	landing: "/",
 	aboutUs: "/about-us",
-  legal: "/legal",
+	legal: "/legal",
+	workDetails: "/work-details",
 };
