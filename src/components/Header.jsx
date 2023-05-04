@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { paths } from "../router/paths";
+import ThemeToggleButton from "../styles/ThemeToggleButton";
 
 export default function Header() {
 	return (
-		<nav>
+		<div>
+			<ThemeToggleButton />
 			<ul>
 				<li>
 					<Link to={paths.landing}>Landing</Link>
@@ -24,6 +26,6 @@ export default function Header() {
 					<Link to={`${paths.workDetails}?workId=1`}>Work 2</Link>
 				</li>
 			</ul>
-		</nav>
+		</div>
 	);
 }
