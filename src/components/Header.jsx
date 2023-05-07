@@ -1,35 +1,32 @@
 import { Link } from "react-router-dom";
 import { paths } from "../router/paths";
-import Button from "./Button";
-import { useTheme } from "../styles/ThemeContext";
+import styled from "styled-components";
+import { themes } from "../styles/themes";
 
-export default function Header() {
-	const { toggleTheme, theme } = useTheme();
+const StyledHeader = styled.div`
+	${({ theme }) => themes[theme]}
+	height: 10vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+`;
+
+// eslint-disable-next-line react/prop-types
+export default function Header({ theme = "primary" }) {
 	return (
-		<div>
-			<Button onClick={toggleTheme} theme={theme}>
-				Cambiar tema
-			</Button>
-			<ul>
-				<li>
-					<Link to={paths.landing}>Landing</Link>
-				</li>
-				<li>
-					<Link to={paths.aboutUs}>About Us</Link>
-				</li>
-				<li>
-					<Link to={paths.legal}>Legal</Link>
-				</li>
-				<li>
-					<Link to={paths.workDetails}>Work Details</Link>
-				</li>
-				<li>
-					<Link to={`${paths.workDetails}?workId=0`}>Work 1</Link>
-				</li>
-				<li>
-					<Link to={`${paths.workDetails}?workId=1`}>Work 2</Link>
-				</li>
-			</ul>
-		</div>
+		<StyledHeader theme={theme}>
+			<Link to={paths.landing}>Landing</Link>
+			<Link to={paths.aboutUs}>About Us</Link>
+			<Link to={paths.legal}>Legal</Link>
+			<Link to={paths.workDetails}>Work Details</Link>
+			<Link to={`${paths.workDetails}?workId=0`}>Work 1</Link>
+			<Link to={`${paths.workDetails}?workId=1`}>Work 2</Link>
+		</StyledHeader>
 	);
 }

@@ -1,20 +1,7 @@
-import { createGlobalStyle, css } from "styled-components";
-import { useTheme } from "./ThemeContext";
-
-const themes = {
-	primary: css`
-		background-color: black;
-		color: white;
-	`,
-	secondary: css`
-		background-color: white;
-		color: black;
-	`,
-};
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   body {
-    ${({ theme }) => themes[theme]}
     margin: 0;
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -26,8 +13,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const StyledGlobalStyle = () => {
-	const { theme } = useTheme();
-	return <GlobalStyle theme={theme} />;
+	return <GlobalStyle />;
 };
 
 export default StyledGlobalStyle;

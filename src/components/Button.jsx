@@ -1,14 +1,13 @@
-// src/components/GenericButton.js
 import styled from "styled-components";
+import { themes } from "../styles/themes";
 
 const StyledButton = styled.button`
+	${({ theme }) => themes[theme]}
 	font-size: 1rem;
 	padding: 0.5rem 1rem;
 	border: none;
 	border-radius: 4px;
 	cursor: pointer;
-	background-color: ${({ theme }) => (theme === "primary" ? "white" : "black")};
-	color: ${({ theme }) => (theme === "primary" ? "black" : "white")};
 	transition: background-color 0.3s ease;
 
 	&:hover {
@@ -16,7 +15,8 @@ const StyledButton = styled.button`
 	}
 `;
 
-const Button = ({ onClick, theme, children }) => {
+// eslint-disable-next-line react/prop-types
+const Button = ({ onClick = () => {}, theme = "primary", children }) => {
 	return (
 		<StyledButton onClick={onClick} theme={theme}>
 			{children}
