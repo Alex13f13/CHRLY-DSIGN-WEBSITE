@@ -1,4 +1,4 @@
-export const theme = {
-  primary: 'primary',
-  secondary: 'secondary',
+export const THEME = {
+  PRIMARY: 'primary',
+  SECONDARY: 'secondary',
 };

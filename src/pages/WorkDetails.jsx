@@ -9,5 +9,5 @@ export default function WorkDetails() {
 		return <h2>Work not found</h2>;
 	}
 
-	return works ? <div>Work Name: {works[workId]?.title}</div> : <h2>Loading...</h2>;
+	return works ? <h1>Work Name: {works[workId]?.title}</h1> : <h2>Loading...</h2>;
 }
