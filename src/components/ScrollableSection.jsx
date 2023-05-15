@@ -1,53 +1,57 @@
-import { useState, useEffect } from "react";
+/* eslint-disable react/prop-types */
 import styled from "styled-components";
+import { useState } from "react";
+import { THEME, ANIMATION, TEXT_TYPE } from "../utils/constants";
+import { useTheme } from "../styles/ThemeContext";
+import { animations } from "../styles/animations";
+import { textTypes } from "../styles/textTypes";
 
 const StyledSection = styled.div`
-	width: 100%;
-	height: 60vh;
-	overflow-x: hidden;
-	overflow-y: scroll;
 	display: flex;
 	flex-direction: row;
+	justify-content: space-around;
+	align-items: start;
+	overflow: hidden;
 `;
 
-// eslint-disable-next-line react/prop-types
-export const ScrollableSection = ({ slices = [1, 2, 3, 4, 5, 6] }) => {
-	const [sectionWidth, setSectionWidth] = useState(0);
-	const [visibleSlice, setVisibleSlice] = useState(0);
+const TextSlice = styled.div`
+	${(props) =>
+		props.sliceActive ? "" : props.theme === THEME.primary ? "color: #202420" : "color: #E3E3E3"};
+	${(animationType) => animations[animationType]}
+	${(textStyles) => textTypes[textStyles]}
+`;
 
-	useEffect(() => {
-		const handleResize = () => {
-			setSectionWidth(window.innerWidth);
-		};
+export const ScrollableSection = ({
+	texts = [],
+	animationType = ANIMATION.fades,
+	textStyles = TEXT_TYPE.description,
+}) => {
+	const { theme } = useTheme();
+	const [sliceActive, setSliceActive] = useState(0);
 
-		handleResize();
-		window.addEventListener("resize", handleResize);
+	// setInterval(() => {
+	// 	let indice = sliceActive + 1;
 
-		return () => {
-			window.removeEventListener("resize", handleResize);
-		};
-	}, []);
+	// 	if (sliceActive >= texts.length) {
+	// 		indice = 0;
+	// 	}
 
-	const renderedSlices = slices.map((slice, index) => {
-		const position = index * sectionWidth;
-		const sliceStyle = {
-			width: sectionWidth,
-			left: position,
-			display: index === visibleSlice ? "block" : "none",
-		};
+	// 	setSliceActive(indice);
+	// }, 2000);
 
-		return (
-			<div key={index} style={sliceStyle}>
-				{slice}
-			</div>
-		);
-	});
-
-	const handleScroll = (event) => {
-		const { scrollLeft } = event.target;
-		const newVisibleSlice = Math.floor(scrollLeft / sectionWidth);
-		setVisibleSlice(newVisibleSlice);
-	};
-
-	return <StyledSection onScroll={handleScroll}>{renderedSlices}</StyledSection>;
+	return (
+		<StyledSection>
+			{texts?.map((paragraph, index) => (
+				<TextSlice
+					textStyles={textStyles}
+					animationType={animationType}
+					theme={theme}
+					sliceActive={sliceActive === index}
+					key={index}
+				>
+					{paragraph}
+				</TextSlice>
+			))}
+		</StyledSection>
+	);
 };

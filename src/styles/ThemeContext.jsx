@@ -10,7 +10,7 @@ export const useTheme = () => {
 
 // eslint-disable-next-line react/prop-types
 export const ThemeProvider = ({ children }) => {
-	const [theme, setTheme] = useState(THEME.PRIMARY);
+	const [theme, setTheme] = useState(THEME.primary);
 
 	const selectTheme = (selectedTheme) => {
 		setTheme(selectedTheme);

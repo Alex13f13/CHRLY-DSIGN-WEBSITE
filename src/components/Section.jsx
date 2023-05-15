@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { themes } from "../styles/themes";
 import { THEME } from "../utils/constants";
+import { forwardRef } from "react";
 
 const StyledSection = styled.section`
 	${({ theme }) => themes[theme]}
@@ -12,8 +13,12 @@ const StyledSection = styled.section`
 `;
 
 // eslint-disable-next-line react/prop-types
-export const Section = ({ theme = THEME.PRIMARY, children }) => {
-	return <StyledSection theme={theme}>{children}</StyledSection>;
+const SectionBase = ({ theme = THEME.primary, children }, ref) => {
+	return (
+		<StyledSection ref={ref} theme={theme}>
+			{children}
+		</StyledSection>
+	);
 };
 
-export default Section;
+export const Section = forwardRef(SectionBase);
