@@ -19,7 +19,6 @@ import { useWeel } from "../utils/useWeel";
 
 export default function AboutUs() {
 	const { theme, selectTheme } = useTheme();
-	useEffect(() => selectTheme(THEME.secondary), []);
 	const refs = [
 		useRef(null),
 		useRef(null),
@@ -30,7 +29,12 @@ export default function AboutUs() {
 		useRef(null),
 		useRef(null),
 	];
-	const { handleWheel, sectionRefs } = useWeel(refs);
+	const { handleWheel, sectionRefs, currentSection } = useWeel(refs);
+	const whiteSections = [1, 2];
+	useEffect(() => {
+		if (whiteSections.includes(currentSection)) selectTheme(THEME.secondary);
+		else selectTheme(THEME.primary);
+	}, [currentSection]);
 
 	return (
 		<div onWheel={handleWheel}>

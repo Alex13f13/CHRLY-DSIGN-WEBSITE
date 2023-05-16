@@ -1,14 +1,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
+import { useElementScroll } from "./useElementScroll";
 
 export const useWeel = (sectionRefs = []) => {
-	// const [isScrolling, setIsScrolling] = useState(false);
 	const [currentSection, setCurrentSection] = useState(0);
+	const [isContainerScrolling, handleScroll] = useElementScroll();
 
 	useEffect(() => scrollToSection(), [currentSection]);
 
 	const handleWheel = (e) => {
-		// if (isScrolling) return;
+		if (isContainerScrolling()) return;
+		handleScroll();
 
 		const { deltaY } = e;
 		if (deltaY > 0) {
@@ -31,5 +33,5 @@ export const useWeel = (sectionRefs = []) => {
 		}
 	};
 
-	return { handleWheel, sectionRefs };
+	return { handleWheel, sectionRefs, currentSection };
 };

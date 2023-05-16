@@ -16,7 +16,7 @@ const StyledSection = styled.div`
 
 const TextSlice = styled.div`
 	${(props) =>
-		props.sliceActive ? "" : props.theme === THEME.primary ? "color: #202420" : "color: #E3E3E3"};
+		props.sliceActive ? "" : props.theme === THEME.primary ? "color: #202024" : "color: #E3E3E3"};
 	${(animationType) => animations[animationType]}
 	${(textStyles) => textTypes[textStyles]}
 `;
