@@ -19,31 +19,39 @@ import { useWeel } from "../utils/useWeel";
 
 export default function AboutUs() {
 	const { theme, selectTheme } = useTheme();
-	const refs = [
-		useRef(null),
-		useRef(null),
-		useRef(null),
-		useRef(null),
-		useRef(null),
-		useRef(null),
-		useRef(null),
-		useRef(null),
+	const steps = [
+		useRef(null), // 0
+		useRef(null), // 1
+		useRef(null), // 2
+		useRef(null), // 3
+		useRef(null), // 4
+		useRef(null), // 5
+		useRef(null), // 6
+		useRef(null), // 7
+		useRef(null), // 8
+		useRef(null), // 9
+		useRef(null), // 10
+		useRef(null), // 11
+		useRef(null), // 12
+		useRef(null), // 13
 	];
-	const { handleWheel, sectionRefs, currentSection } = useWeel(refs);
-	const whiteSections = [1, 2];
+	const { handleWheel, stepsRefs, currentStep } = useWeel(steps);
+	const whiteSections = [1, 2, 3, 4, 5];
+	const blackboneSections = [2, 3, 4, 5];
+	const standForSections = [9, 10, 11, 12];
 	useEffect(() => {
-		if (whiteSections.includes(currentSection)) selectTheme(THEME.secondary);
+		if (whiteSections.includes(currentStep)) selectTheme(THEME.secondary);
 		else selectTheme(THEME.primary);
-	}, [currentSection]);
+	}, [currentStep]);
 
 	return (
 		<div onWheel={handleWheel}>
-			<Section theme={theme} ref={sectionRefs[0]}>
+			<Section theme={theme} ref={stepsRefs[0]}>
 				<StyledAboutUs>
 					<p>CHRLY DSIGN® is a high-end design & branding agency specialized in Digital Brands.</p>
 				</StyledAboutUs>
 			</Section>
-			<Section theme={theme} ref={sectionRefs[1]}>
+			<Section theme={theme} ref={stepsRefs[1]}>
 				<StyledWhatWeDo>
 					<p>
 						If you’re looking for usual brand stuff this is not the place. We provide creative
@@ -52,12 +60,22 @@ export default function AboutUs() {
 					</p>
 				</StyledWhatWeDo>
 			</Section>
-			<Section theme={theme} ref={sectionRefs[2]}>
+			<Section
+				theme={theme}
+				ref={(node) => (
+					(stepsRefs[2].current = node),
+					(stepsRefs[3].current = node),
+					(stepsRefs[4].current = node),
+					(stepsRefs[5].current = node)
+				)}
+			>
 				<StyledBackbone>
 					<h1>Backbone concepts</h1>
 					<ScrollableSection
 						texts={["DIGITAL BRANDS", "MOTION", "PREMIUM DESIGN", "INNER SOUL"]}
 						textStyles={TEXT_TYPE.title}
+						currentStep={currentStep}
+						activeSection={blackboneSections.includes(currentStep)}
 					/>
 					<ScrollableSection
 						texts={[
@@ -67,6 +85,8 @@ export default function AboutUs() {
 							"Backbone concept 4 / 4",
 						]}
 						textStyles={TEXT_TYPE.description}
+						currentStep={currentStep}
+						activeSection={blackboneSections.includes(currentStep)}
 					/>
 					<ScrollableSection
 						texts={[
@@ -76,10 +96,12 @@ export default function AboutUs() {
 							"Every brand has a story that begins with passion, keeps the light on in the darkest moments and gives the drive to chase those impossible dreams. An inspiring story hidden in the dark waiting for the right way to shine through. We wanna help you tell that story and become part of people's lives.",
 						]}
 						textStyles={TEXT_TYPE.description}
+						currentStep={currentStep}
+						activeSection={blackboneSections.includes(currentStep)}
 					/>
 				</StyledBackbone>
 			</Section>
-			<Section theme={theme} ref={sectionRefs[3]}>
+			<Section theme={theme} ref={stepsRefs[6]}>
 				<StyledMision>
 					<h1>Mision</h1>
 					<p>
@@ -88,7 +110,7 @@ export default function AboutUs() {
 					</p>
 				</StyledMision>
 			</Section>
-			<Section theme={theme} ref={sectionRefs[4]}>
+			<Section theme={theme} ref={stepsRefs[7]}>
 				<StyledWhy>
 					<h1>Why</h1>
 					<ScrollableSection
@@ -101,7 +123,7 @@ export default function AboutUs() {
 					/>
 				</StyledWhy>
 			</Section>
-			<Section theme={theme} ref={sectionRefs[5]}>
+			<Section theme={theme} ref={stepsRefs[8]}>
 				<StyledDifferent>
 					<p>
 						What makes us different is our pure motivation to innovate and provide value. The honest
@@ -110,12 +132,22 @@ export default function AboutUs() {
 					</p>
 				</StyledDifferent>
 			</Section>
-			<Section theme={theme} ref={sectionRefs[6]}>
+			<Section
+				theme={theme}
+				ref={(node) => (
+					(stepsRefs[9].current = node),
+					(stepsRefs[10].current = node),
+					(stepsRefs[11].current = node),
+					(stepsRefs[12].current = node)
+				)}
+			>
 				<StyledStandFor>
 					<h1>WE STAND FOR</h1>
 					<ScrollableSection
 						texts={["EVOLUTION /", "PERSEVERANCE /", "AMBITION /", "MODESTY /"]}
 						textStyles={TEXT_TYPE.subtitle}
+						currentStep={currentStep}
+						activeSection={standForSections.includes(currentStep)}
 					/>
 					<ScrollableSection
 						texts={[
@@ -125,10 +157,12 @@ export default function AboutUs() {
 							"Only focus on helping and doing good for people. No hidden intentions.",
 						]}
 						textStyles={TEXT_TYPE.description}
+						currentStep={currentStep}
+						activeSection={standForSections.includes(currentStep)}
 					/>
 				</StyledStandFor>
 			</Section>
-			<Footer theme={theme} ref={sectionRefs[7]} />
+			<Footer theme={theme} ref={stepsRefs[13]} />
 		</div>
 	);
 }

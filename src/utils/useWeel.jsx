@@ -2,11 +2,11 @@
 import { useEffect, useState } from "react";
 import { useElementScroll } from "./useElementScroll";
 
-export const useWeel = (sectionRefs = []) => {
-	const [currentSection, setCurrentSection] = useState(0);
+export const useWeel = (stepsRefs = []) => {
+	const [currentStep, setCurrentStep] = useState(0);
 	const [isContainerScrolling, handleScroll] = useElementScroll();
 
-	useEffect(() => scrollToSection(), [currentSection]);
+	useEffect(() => scrollToSection(), [currentStep]);
 
 	const handleWheel = (e) => {
 		if (isContainerScrolling()) return;
@@ -15,23 +15,23 @@ export const useWeel = (sectionRefs = []) => {
 		const { deltaY } = e;
 		if (deltaY > 0) {
 			// Scroll down
-			if (currentSection < sectionRefs.length - 1) {
-				setCurrentSection(currentSection + 1);
+			if (currentStep < stepsRefs.length - 1) {
+				setCurrentStep(currentStep + 1);
 			}
 		} else {
 			// Scroll up
-			if (currentSection > 0) {
-				setCurrentSection(currentSection - 1);
+			if (currentStep > 0) {
+				setCurrentStep(currentStep - 1);
 			}
 		}
 	};
 
 	const scrollToSection = () => {
-		const section = sectionRefs[currentSection]?.current;
+		const section = stepsRefs[currentStep]?.current;
 		if (section) {
 			section.scrollIntoView({ behavior: "smooth" });
 		}
 	};
 
-	return { handleWheel, sectionRefs, currentSection };
+	return { handleWheel, stepsRefs, currentStep };
 };

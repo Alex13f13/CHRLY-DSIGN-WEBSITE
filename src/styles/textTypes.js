@@ -2,7 +2,7 @@ import { css } from "styled-components";
 
 export const textTypes = {
 	title: css`
-		font-size: 1.5rem;
+		font-size: 3rem;
 		font-weight: bold;
 	`,
 	subTitle: css`

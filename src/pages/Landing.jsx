@@ -19,25 +19,25 @@ import { Footer } from "../components/Footer";
 export default function Landing() {
 	const { theme, selectTheme } = useTheme();
 	useEffect(() => selectTheme(THEME.primary), []);
-	const refs = [
-		useRef(null),
-		useRef(null),
-		useRef(null),
-		useRef(null),
-		useRef(null),
-		useRef(null),
-		useRef(null),
+	const steps = [
+		useRef(null), // 0
+		useRef(null), // 1
+		useRef(null), // 2
+		useRef(null), // 3
+		useRef(null), // 4
+		useRef(null), // 5
+		useRef(null), // 6
 	];
-	const { handleWheel, sectionRefs } = useWeel(refs);
+	const { handleWheel, stepsRefs, currentStep } = useWeel(steps);
 
 	return (
 		<div onWheel={handleWheel}>
-			<Section theme={theme} ref={sectionRefs[0]}>
+			<Section theme={theme} ref={stepsRefs[0]}>
 				<StyledVideo>
 					<StyledVideoSource src="" autoPlay loop muted></StyledVideoSource>
 				</StyledVideo>
 			</Section>
-			<Section theme={theme} ref={sectionRefs[1]}>
+			<Section theme={theme} ref={stepsRefs[1]}>
 				<StyledIntro>
 					<p>
 						Welcome to CHRLY DSIGN, the award winning Digital Multimedia Branding agency that makes
@@ -48,7 +48,7 @@ export default function Landing() {
 					/>
 				</StyledIntro>
 			</Section>
-			<Section theme={theme} ref={sectionRefs[2]}>
+			<Section theme={theme} ref={stepsRefs[2]}>
 				<StyledOffer>
 					<ScrollableSection texts={["EVOLUTI", "ON"]} />
 					<p>
@@ -58,7 +58,7 @@ export default function Landing() {
 					</p>
 				</StyledOffer>
 			</Section>
-			<Section theme={theme} ref={sectionRefs[3]}>
+			<Section theme={theme} ref={stepsRefs[3]}>
 				<StyledWork>
 					<h1>Work</h1>
 					<p>
@@ -72,7 +72,7 @@ export default function Landing() {
 					<h1>Work List Component</h1>
 				</StyledWork>
 			</Section>
-			<Section theme={theme} ref={sectionRefs[4]}>
+			<Section theme={theme} ref={stepsRefs[4]}>
 				<StyledOneHundredPercent>
 					<h1>Evolve your brand to its 0% a 100%</h1>
 					<p>
@@ -83,7 +83,7 @@ export default function Landing() {
 					</p>
 				</StyledOneHundredPercent>
 			</Section>
-			<Section theme={theme} ref={sectionRefs[5]}>
+			<Section theme={theme} ref={stepsRefs[5]}>
 				<StyledAwards>
 					<h1>Awards</h1>
 					<p>
@@ -95,7 +95,7 @@ export default function Landing() {
 					<a href="#">- Other mentions and awards</a>
 				</StyledAwards>
 			</Section>
-			<Footer theme={theme} ref={sectionRefs[6]} />
+			<Footer theme={theme} ref={stepsRefs[6]} />
 		</div>
 	);
 }
