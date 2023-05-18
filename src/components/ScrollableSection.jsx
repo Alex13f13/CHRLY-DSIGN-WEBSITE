@@ -2,10 +2,9 @@
 /* eslint-disable react/prop-types */
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-import { THEME, ANIMATION, TEXT_TYPE } from "../utils/constants";
+import { ANIMATION, TEXT_TYPE } from "../utils/constants";
 import { useTheme } from "../styles/ThemeContext";
-import { animations } from "../styles/animations";
-import { textTypes } from "../styles/textTypes";
+import { TextSlice } from "./TextSlice";
 
 const StyledSection = styled.div`
 	display: flex;
@@ -15,16 +14,10 @@ const StyledSection = styled.div`
 	overflow: hidden;
 `;
 
-const TextSlice = styled.div`
-	${(props) => textTypes[props.textStyles]}
-	${(props) =>
-		props.sliceActive ? "" : props.theme === THEME.primary ? "color: #202024" : "color: #E3E3E3"};
-	${(animationType) => animations[animationType]}
-`;
-
 export const ScrollableSection = ({
 	texts = [],
-	animationType = ANIMATION.fades,
+	animIn = ANIMATION.none,
+	animOut = ANIMATION.none,
 	textStyles = TEXT_TYPE.description,
 	activeSection = false,
 	currentStep = 0,
@@ -60,7 +53,8 @@ export const ScrollableSection = ({
 			{texts?.map((paragraph, index) => (
 				<TextSlice
 					textStyles={textStyles}
-					animationType={animationType}
+					animIn={animIn}
+					animOut={animOut}
 					theme={theme}
 					sliceActive={sliceActive === index}
 					key={index}

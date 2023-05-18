@@ -3,7 +3,7 @@ import { useDelay } from './useDelay';
 
 export const useElementScroll = () => {
   const isScrolling = useRef(null);
-  const handleDelay = useDelay(1000);
+  const handleDelay = useDelay(500);
 
   const handleScroll = () => {
     if (isScrolling.current) return;

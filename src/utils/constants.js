@@ -4,8 +4,9 @@ export const THEME = {
 };
 
 export const ANIMATION = {
-  fades: 'fades',
-  slides: 'slides',
+	fadeIn: "fadeIn",
+	fadeOut: "fadeOut",
+	slide: "slide",
 };
 
 export const TEXT_TYPE = {

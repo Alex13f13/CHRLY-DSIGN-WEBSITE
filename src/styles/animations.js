@@ -1,79 +1,12 @@
-import { css } from 'styled-components';
+import { css } from "styled-components";
+import { fadeIn, fadeOut } from "./keyframes";
 
 export const animations = {
-	fades: css`
-		@keyframes fadeIn {
-			from {
-				opacity: 0;
-			}
-			to {
-				opacity: 1;
-			}
-		}
-
-		@keyframes fadeOut {
-			from {
-				opacity: 1;
-			}
-			to {
-				opacity: 0;
-			}
-		}
+	none: css``,
+	fadeIn: css`
+		animation: ${fadeIn} 0.5s ease-in-out forwards;
 	`,
-
-	slides: css`
-		@keyframes slideIn {
-			from {
-				transform: translateX(-100%);
-			}
-			to {
-				transform: translateX(0);
-			}
-		}
-
-		@keyframes slideOut {
-			from {
-				transform: translateX(0);
-			}
-			to {
-				transform: translateX(-100%);
-			}
-		}
-
-		@keyframes slideInRight {
-			from {
-				transform: translateX(100%);
-			}
-			to {
-				transform: translateX(0);
-			}
-		}
-
-		@keyframes slideOutRight {
-			from {
-				transform: translateX(0);
-			}
-			to {
-				transform: translateX(100%);
-			}
-		}
-
-		@keyframes slideInLeft {
-			from {
-				transform: translateX(-100%);
-			}
-			to {
-				transform: translateX(0);
-			}
-		}
-
-		@keyframes slideOutLeft {
-			from {
-				transform: translateX(0);
-			}
-			to {
-				transform: translateX(-100%);
-			}
-		}
+	fadeOut: css`
+		animation: ${fadeOut} 0.5s ease-in-out forwards;
 	`,
 };

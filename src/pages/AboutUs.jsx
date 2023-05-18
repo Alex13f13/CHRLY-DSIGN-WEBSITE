@@ -16,6 +16,7 @@ import {
 import { ScrollableSection } from "../components/ScrollableSection";
 import { Footer } from "../components/Footer";
 import { useWeel } from "../utils/useWeel";
+import { TextSlice } from "../components/TextSlice";
 
 export default function AboutUs() {
 	const { theme, selectTheme } = useTheme();
@@ -34,11 +35,18 @@ export default function AboutUs() {
 		useRef(null), // 11
 		useRef(null), // 12
 		useRef(null), // 13
+		useRef(null), // 14
+		useRef(null), // 15
+		useRef(null), // 16
+		useRef(null), // 17
+		useRef(null), // 18
 	];
 	const { handleWheel, stepsRefs, currentStep } = useWeel(steps);
 	const whiteSections = [1, 2, 3, 4, 5];
+
 	const blackboneSections = [2, 3, 4, 5];
-	const standForSections = [9, 10, 11, 12];
+	const whySections = [10, 11, 12];
+	const standForSections = [14, 15, 16, 17];
 	useEffect(() => {
 		if (whiteSections.includes(currentStep)) selectTheme(THEME.secondary);
 		else selectTheme(THEME.primary);
@@ -48,16 +56,18 @@ export default function AboutUs() {
 		<div onWheel={handleWheel}>
 			<Section theme={theme} ref={stepsRefs[0]}>
 				<StyledAboutUs>
-					<p>CHRLY DSIGN® is a high-end design & branding agency specialized in Digital Brands.</p>
+					<TextSlice textStyles={TEXT_TYPE.description}>
+						CHRLY DSIGN® is a high-end design & branding agency specialized in Digital Brands.
+					</TextSlice>
 				</StyledAboutUs>
 			</Section>
 			<Section theme={theme} ref={stepsRefs[1]}>
 				<StyledWhatWeDo>
-					<p>
+					<TextSlice textStyles={TEXT_TYPE.description}>
 						If you’re looking for usual brand stuff this is not the place. We provide creative
 						innovation for companies that seek to step into the future, push their limits and
 						evolve. These are our beliefs:
-					</p>
+					</TextSlice>
 				</StyledWhatWeDo>
 			</Section>
 			<Section
@@ -70,12 +80,14 @@ export default function AboutUs() {
 				)}
 			>
 				<StyledBackbone>
-					<h1>Backbone concepts</h1>
+					<TextSlice textStyles={TEXT_TYPE.title}>Backbone concepts</TextSlice>
 					<ScrollableSection
 						texts={["DIGITAL BRANDS", "MOTION", "PREMIUM DESIGN", "INNER SOUL"]}
 						textStyles={TEXT_TYPE.title}
 						currentStep={currentStep}
 						activeSection={blackboneSections.includes(currentStep)}
+						animIn={ANIMATION.none}
+						animOut={ANIMATION.none}
 					/>
 					<ScrollableSection
 						texts={[
@@ -87,6 +99,8 @@ export default function AboutUs() {
 						textStyles={TEXT_TYPE.description}
 						currentStep={currentStep}
 						activeSection={blackboneSections.includes(currentStep)}
+						animIn={ANIMATION.fadeIn}
+						animOut={ANIMATION.fadeOut}
 					/>
 					<ScrollableSection
 						texts={[
@@ -98,21 +112,49 @@ export default function AboutUs() {
 						textStyles={TEXT_TYPE.description}
 						currentStep={currentStep}
 						activeSection={blackboneSections.includes(currentStep)}
+						animIn={ANIMATION.fadeIn}
+						animOut={ANIMATION.fadeOut}
 					/>
 				</StyledBackbone>
 			</Section>
 			<Section theme={theme} ref={stepsRefs[6]}>
 				<StyledMision>
-					<h1>Mision</h1>
-					<p>
+					<TextSlice textStyles={TEXT_TYPE.title}>Mision</TextSlice>
+					<TextSlice textStyles={TEXT_TYPE.description} sliceActive={currentStep === 6}>
 						Our mission is to help Digital Brands step up, evolving till they become the ultimate
 						version of themselves and achieve the results they always dreamed of.
-					</p>
+					</TextSlice>
 				</StyledMision>
 			</Section>
-			<Section theme={theme} ref={stepsRefs[7]}>
+			<Section
+				theme={theme}
+				ref={(node) => (
+					(stepsRefs[7].current = node),
+					(stepsRefs[8].current = node),
+					(stepsRefs[9].current = node),
+					(stepsRefs[10].current = node),
+					(stepsRefs[11].current = node),
+					(stepsRefs[12].current = node)
+				)}
+			>
 				<StyledWhy>
-					<h1>Why</h1>
+					<TextSlice textStyles={TEXT_TYPE.title}>WHY</TextSlice>
+					<TextSlice
+						textStyles={TEXT_TYPE.title}
+						sliceActive={currentStep >= 8}
+						animIn={ANIMATION.fadeIn}
+						animOut={ANIMATION.fadeOut}
+					>
+						??
+					</TextSlice>
+					<TextSlice
+						textStyles={TEXT_TYPE.title}
+						sliceActive={currentStep === 9}
+						animIn={ANIMATION.fadeIn}
+						animOut={ANIMATION.fadeOut}
+					>
+						{currentStep === 9 ? "???????" : null}
+					</TextSlice>
 					<ScrollableSection
 						texts={[
 							"“Because I know what it is to have a dream that nobody understands; how it feels in the stomach when you do everything in your power to go after it, but things just seem to go against you. I understand all those nights without sleep and long stares at the wall trying to figure out what to do. I do, because just like you, I also started with a dream...",
@@ -120,34 +162,40 @@ export default function AboutUs() {
 							"So it is because I understand the huge sacrifice it takes to pursue your dream life, that I want to use my creative abilities and acquired knowledge to provide digital brands in the same situation, with tools that can actually help them achieve theirs.”",
 						]}
 						textStyles={TEXT_TYPE.description}
+						currentStep={currentStep}
+						activeSection={whySections.includes(currentStep)}
+						animIn={ANIMATION.fadeIn}
+						animOut={ANIMATION.fadeOut}
 					/>
 				</StyledWhy>
 			</Section>
-			<Section theme={theme} ref={stepsRefs[8]}>
+			<Section theme={theme} ref={stepsRefs[13]}>
 				<StyledDifferent>
-					<p>
+					<TextSlice textStyles={TEXT_TYPE.description}>
 						What makes us different is our pure motivation to innovate and provide value. The honest
 						drive of serving your cause to achieve your dream results, even if that would mean
 						having to step aside and tell you we are not the best fit for the job.
-					</p>
+					</TextSlice>
 				</StyledDifferent>
 			</Section>
 			<Section
 				theme={theme}
 				ref={(node) => (
-					(stepsRefs[9].current = node),
-					(stepsRefs[10].current = node),
-					(stepsRefs[11].current = node),
-					(stepsRefs[12].current = node)
+					(stepsRefs[14].current = node),
+					(stepsRefs[15].current = node),
+					(stepsRefs[16].current = node),
+					(stepsRefs[17].current = node)
 				)}
 			>
 				<StyledStandFor>
-					<h1>WE STAND FOR</h1>
+					<TextSlice textStyles={TEXT_TYPE.title}>WE STAND FOR</TextSlice>
 					<ScrollableSection
 						texts={["EVOLUTION /", "PERSEVERANCE /", "AMBITION /", "MODESTY /"]}
 						textStyles={TEXT_TYPE.subtitle}
 						currentStep={currentStep}
 						activeSection={standForSections.includes(currentStep)}
+						animIn={ANIMATION.fadeIn}
+						animOut={ANIMATION.fadeOut}
 					/>
 					<ScrollableSection
 						texts={[
@@ -159,10 +207,12 @@ export default function AboutUs() {
 						textStyles={TEXT_TYPE.description}
 						currentStep={currentStep}
 						activeSection={standForSections.includes(currentStep)}
+						animIn={ANIMATION.fadeIn}
+						animOut={ANIMATION.fadeOut}
 					/>
 				</StyledStandFor>
 			</Section>
-			<Footer theme={theme} ref={stepsRefs[13]} />
+			<Footer theme={theme} ref={stepsRefs[18]} />
 		</div>
 	);
 }
