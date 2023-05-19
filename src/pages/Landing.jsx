@@ -11,14 +11,14 @@ import {
 } from "../styles/LandingStyle";
 import { useTheme } from "../styles/ThemeContext";
 import { ScrollableSection } from "../components/ScrollableSection";
-import { THEME } from "../utils/constants";
+import { THEME, TEXT_TYPE, ANIMATION } from "../utils/constants";
 import { useEffect, useRef } from "react";
 import { useWeel } from "../utils/useWeel";
 import { Footer } from "../components/Footer";
+import { TextSlice } from "../components/TextSlice";
 
 export default function Landing() {
-	const { theme, selectTheme } = useTheme();
-	useEffect(() => selectTheme(THEME.primary), []);
+	//all steps
 	const steps = [
 		useRef(null), // 0
 		useRef(null), // 1
@@ -27,8 +27,28 @@ export default function Landing() {
 		useRef(null), // 4
 		useRef(null), // 5
 		useRef(null), // 6
+		useRef(null), // 7
+		useRef(null), // 8
+		useRef(null), // 9
+		useRef(null), // 10
+		useRef(null), // 11
+		useRef(null), // 12
+		useRef(null), // 13
+		useRef(null), // 14
 	];
 	const { handleWheel, stepsRefs, currentStep } = useWeel(steps);
+
+	//steps in sections
+	const introSteps = [2, 3, 4, 5, 6, 7];
+	const offerSteps = [8, 9, 10];
+
+	//theme
+	const { theme, selectTheme } = useTheme();
+	const whiteSections = [];
+	useEffect(() => {
+		if (whiteSections.includes(currentStep)) selectTheme(THEME.secondary);
+		else selectTheme(THEME.primary);
+	}, [currentStep]);
 
 	return (
 		<div onWheel={handleWheel}>
@@ -37,28 +57,58 @@ export default function Landing() {
 					<StyledVideoSource src="" autoPlay loop muted></StyledVideoSource>
 				</StyledVideo>
 			</Section>
-			<Section theme={theme} ref={stepsRefs[1]}>
+			<Section
+				theme={theme}
+				ref={(node) => (
+					(stepsRefs[1].current = node),
+					(stepsRefs[2].current = node),
+					(stepsRefs[3].current = node),
+					(stepsRefs[4].current = node),
+					(stepsRefs[5].current = node),
+					(stepsRefs[6].current = node),
+					(stepsRefs[7].current = node)
+				)}
+			>
 				<StyledIntro>
-					<p>
+					<TextSlice textStyles={TEXT_TYPE.description}>
 						Welcome to CHRLY DSIGN, the award winning Digital Multimedia Branding agency that makes
 						digital brands evolve so much, their big dreams become tiny.
-					</p>
+					</TextSlice>
 					<ScrollableSection
 						texts={["BRANDING ", "DESIGN", "MOTION", "IDENTIFY", "INTERFACE", "EVOLUTION"]}
+						textStyles={TEXT_TYPE.title}
+						currentStep={currentStep}
+						activeSection={introSteps.includes(currentStep)}
+						animSectIn={ANIMATION.fadeIn}
+						animSectOut={ANIMATION.fadeOut}
 					/>
 				</StyledIntro>
 			</Section>
-			<Section theme={theme} ref={stepsRefs[2]}>
+			<Section
+				theme={theme}
+				ref={(node) => (
+					(stepsRefs[8].current = node),
+					(stepsRefs[9].current = node),
+					(stepsRefs[10].current = node)
+				)}
+			>
 				<StyledOffer>
-					<ScrollableSection texts={["EVOLUTI", "ON"]} />
-					<p>
+					<ScrollableSection
+						texts={["EVOLUTI", "ON"]}
+						textStyles={TEXT_TYPE.title}
+						currentStep={currentStep}
+						activeSection={offerSteps.includes(currentStep)}
+						// animSectIn={ANIMATION.fadeIn}
+						animSectOut={ANIMATION.fadeOut}
+					/>
+					<TextSlice textStyles={TEXT_TYPE.description}>
 						Digital Brands are the future in the now. Why then use the same approach of the last 80
 						years? By understanding their true nature, we provide the ultimate digital brand push
 						that will get them on the path to their dream results.
-					</p>
+					</TextSlice>
 				</StyledOffer>
 			</Section>
-			<Section theme={theme} ref={stepsRefs[3]}>
+			<Section theme={theme} ref={stepsRefs[11]}>
 				<StyledWork>
 					<h1>Work</h1>
 					<p>
@@ -72,7 +122,7 @@ export default function Landing() {
 					<h1>Work List Component</h1>
 				</StyledWork>
 			</Section>
-			<Section theme={theme} ref={stepsRefs[4]}>
+			<Section theme={theme} ref={stepsRefs[12]}>
 				<StyledOneHundredPercent>
 					<h1>Evolve your brand to its 0% a 100%</h1>
 					<p>
@@ -83,7 +133,7 @@ export default function Landing() {
 					</p>
 				</StyledOneHundredPercent>
 			</Section>
-			<Section theme={theme} ref={stepsRefs[5]}>
+			<Section theme={theme} ref={stepsRefs[13]}>
 				<StyledAwards>
 					<h1>Awards</h1>
 					<p>
@@ -95,7 +145,7 @@ export default function Landing() {
 					<a href="#">- Other mentions and awards</a>
 				</StyledAwards>
 			</Section>
-			<Footer theme={theme} ref={stepsRefs[6]} />
+			<Footer theme={theme} ref={stepsRefs[14]} />
 		</div>
 	);
 }

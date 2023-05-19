@@ -19,7 +19,7 @@ import { useWeel } from "../utils/useWeel";
 import { TextSlice } from "../components/TextSlice";
 
 export default function AboutUs() {
-	const { theme, selectTheme } = useTheme();
+	//all steps
 	const steps = [
 		useRef(null), // 0
 		useRef(null), // 1
@@ -42,11 +42,15 @@ export default function AboutUs() {
 		useRef(null), // 18
 	];
 	const { handleWheel, stepsRefs, currentStep } = useWeel(steps);
-	const whiteSections = [1, 2, 3, 4, 5];
 
-	const blackboneSections = [2, 3, 4, 5];
-	const whySections = [10, 11, 12];
-	const standForSections = [14, 15, 16, 17];
+	//steps in sections
+	const blackboneSteps = [2, 3, 4, 5];
+	const whySteps = [10, 11, 12];
+	const standForSteps = [14, 15, 16, 17];
+
+	//theme
+	const { theme, selectTheme } = useTheme();
+	const whiteSections = [1, 2, 3, 4, 5];
 	useEffect(() => {
 		if (whiteSections.includes(currentStep)) selectTheme(THEME.secondary);
 		else selectTheme(THEME.primary);
@@ -85,7 +89,7 @@ export default function AboutUs() {
 						texts={["DIGITAL BRANDS", "MOTION", "PREMIUM DESIGN", "INNER SOUL"]}
 						textStyles={TEXT_TYPE.title}
 						currentStep={currentStep}
-						activeSection={blackboneSections.includes(currentStep)}
+						activeSection={blackboneSteps.includes(currentStep)}
 						animIn={ANIMATION.none}
 						animOut={ANIMATION.none}
 					/>
@@ -98,7 +102,7 @@ export default function AboutUs() {
 						]}
 						textStyles={TEXT_TYPE.description}
 						currentStep={currentStep}
-						activeSection={blackboneSections.includes(currentStep)}
+						activeSection={blackboneSteps.includes(currentStep)}
 						animIn={ANIMATION.fadeIn}
 						animOut={ANIMATION.fadeOut}
 					/>
@@ -111,7 +115,7 @@ export default function AboutUs() {
 						]}
 						textStyles={TEXT_TYPE.description}
 						currentStep={currentStep}
-						activeSection={blackboneSections.includes(currentStep)}
+						activeSection={blackboneSteps.includes(currentStep)}
 						animIn={ANIMATION.fadeIn}
 						animOut={ANIMATION.fadeOut}
 					/>
@@ -163,7 +167,7 @@ export default function AboutUs() {
 						]}
 						textStyles={TEXT_TYPE.description}
 						currentStep={currentStep}
-						activeSection={whySections.includes(currentStep)}
+						activeSection={whySteps.includes(currentStep)}
 						animIn={ANIMATION.fadeIn}
 						animOut={ANIMATION.fadeOut}
 					/>
@@ -193,7 +197,7 @@ export default function AboutUs() {
 						texts={["EVOLUTION /", "PERSEVERANCE /", "AMBITION /", "MODESTY /"]}
 						textStyles={TEXT_TYPE.subtitle}
 						currentStep={currentStep}
-						activeSection={standForSections.includes(currentStep)}
+						activeSection={standForSteps.includes(currentStep)}
 						animIn={ANIMATION.fadeIn}
 						animOut={ANIMATION.fadeOut}
 					/>
@@ -206,7 +210,7 @@ export default function AboutUs() {
 						]}
 						textStyles={TEXT_TYPE.description}
 						currentStep={currentStep}
-						activeSection={standForSections.includes(currentStep)}
+						activeSection={standForSteps.includes(currentStep)}
 						animIn={ANIMATION.fadeIn}
 						animOut={ANIMATION.fadeOut}
 					/>

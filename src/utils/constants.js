@@ -4,6 +4,7 @@ export const THEME = {
 };
 
 export const ANIMATION = {
+  none: 'none',
 	fadeIn: "fadeIn",
 	fadeOut: "fadeOut",
 	slide: "slide",

@@ -5,8 +5,11 @@ import { useState, useEffect } from "react";
 import { ANIMATION, TEXT_TYPE } from "../utils/constants";
 import { useTheme } from "../styles/ThemeContext";
 import { TextSlice } from "./TextSlice";
+import { animations } from "../styles/animations";
 
 const StyledSection = styled.div`
+	${(props) =>
+		props?.activeSection ? animations[props?.animSectIn] : animations[props?.animSectOut]}
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
@@ -18,6 +21,8 @@ export const ScrollableSection = ({
 	texts = [],
 	animIn = ANIMATION.none,
 	animOut = ANIMATION.none,
+	animSectIn = ANIMATION.none,
+	animSectOut = ANIMATION.none,
 	textStyles = TEXT_TYPE.description,
 	activeSection = false,
 	currentStep = 0,
@@ -49,7 +54,7 @@ export const ScrollableSection = ({
 	}, [currentStep]);
 
 	return (
-		<StyledSection>
+		<StyledSection activeSection={activeSection} animSectIn={animSectIn} animSectOut={animSectOut}>
 			{texts?.map((paragraph, index) => (
 				<TextSlice
 					textStyles={textStyles}
