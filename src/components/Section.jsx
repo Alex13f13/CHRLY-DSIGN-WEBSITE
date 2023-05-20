@@ -6,10 +6,7 @@ import { forwardRef } from "react";
 const StyledSection = styled.section`
 	${({ theme }) => themes[theme]}
 	height: 90vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	overflow: hidden;
 `;
 
 // eslint-disable-next-line react/prop-types

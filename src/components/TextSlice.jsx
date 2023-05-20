@@ -14,8 +14,8 @@ const StyledTextSlice = styled.div`
 `;
 
 export const TextSlice = ({
-	animIn = ANIMATION.none,
-	animOut = ANIMATION.none,
+	animIn = ANIMATION.default,
+	animOut = ANIMATION.default,
 	textStyles = TEXT_TYPE.description,
 	sliceActive = true,
 	theme,

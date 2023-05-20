@@ -14,27 +14,12 @@ export const StyledVideoSource = styled.video`
 	width: 100%;
 `;
 
-export const StyledIntro = styled.div`
-	height: 100vh;
-	width: 100%;
-`;
+export const StyledIntro = styled.div``;
 
-export const StyledOffer = styled.div`
-	height: 100vh;
-	width: 100%;
-`;
+export const StyledOffer = styled.div``;
 
-export const StyledWork = styled.div`
-	height: 100vh;
-	width: 100%;
-`;
+export const StyledWork = styled.div``;
 
-export const StyledOneHundredPercent = styled.div`
-	height: 100vh;
-	width: 100%;
-`;
+export const StyledOneHundredPercent = styled.div``;
 
-export const StyledAwards = styled.div`
-	height: 100vh;
-	width: 100%;
-`;
+export const StyledAwards = styled.div``;

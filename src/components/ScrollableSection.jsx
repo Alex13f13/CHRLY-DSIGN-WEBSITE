@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { useState, useEffect } from "react";
 import { ANIMATION, TEXT_TYPE } from "../utils/constants";
 import { useTheme } from "../styles/ThemeContext";
@@ -10,6 +10,7 @@ import { animations } from "../styles/animations";
 const StyledSection = styled.div`
 	${(props) =>
 		props?.activeSection ? animations[props?.animSectIn] : animations[props?.animSectOut]}
+	${(props) => props?.sectionStyles}
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
@@ -19,10 +20,11 @@ const StyledSection = styled.div`
 
 export const ScrollableSection = ({
 	texts = [],
-	animIn = ANIMATION.none,
-	animOut = ANIMATION.none,
-	animSectIn = ANIMATION.none,
-	animSectOut = ANIMATION.none,
+	sectionStyles = css``,
+	animIn = ANIMATION.default,
+	animOut = ANIMATION.default,
+	animSectIn = ANIMATION.default,
+	animSectOut = ANIMATION.default,
 	textStyles = TEXT_TYPE.description,
 	activeSection = false,
 	currentStep = 0,
@@ -54,7 +56,12 @@ export const ScrollableSection = ({
 	}, [currentStep]);
 
 	return (
-		<StyledSection activeSection={activeSection} animSectIn={animSectIn} animSectOut={animSectOut}>
+		<StyledSection
+			sectionStyles={sectionStyles}
+			activeSection={activeSection}
+			animSectIn={animSectIn}
+			animSectOut={animSectOut}
+		>
 			{texts?.map((paragraph, index) => (
 				<TextSlice
 					textStyles={textStyles}

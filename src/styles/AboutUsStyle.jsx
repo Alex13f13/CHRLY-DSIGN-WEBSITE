@@ -1,36 +1,15 @@
 import styled from "styled-components";
 
-export const StyledAboutUs = styled.div`
-	height: 100%;
-	width: 100%;
-`;
+export const StyledAboutUs = styled.div``;
 
-export const StyledWhatWeDo = styled.div`
-	height: 100vh;
-	width: 100%;
-`;
+export const StyledWhatWeDo = styled.div``;
 
-export const StyledBackbone = styled.div`
-	height: 100vh;
-	width: 100%;
-`;
+export const StyledBackbone = styled.div``;
 
-export const StyledMision = styled.div`
-	height: 100vh;
-	width: 100%;
-`;
+export const StyledMision = styled.div``;
 
-export const StyledWhy = styled.div`
-	height: 100vh;
-	width: 100%;
-`;
+export const StyledWhy = styled.div``;
 
-export const StyledDifferent = styled.div`
-	height: 100vh;
-	width: 100%;
-`;
+export const StyledDifferent = styled.div``;
 
-export const StyledStandFor = styled.div`
-	height: 100vh;
-	width: 100%;
-`;
+export const StyledStandFor = styled.div``;

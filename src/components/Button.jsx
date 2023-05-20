@@ -17,12 +17,10 @@ const StyledButton = styled.button`
 `;
 
 // eslint-disable-next-line react/prop-types
-const Button = ({ onClick = () => {}, theme = THEME.PRIMARY, children }) => {
+export const Button = ({ onClick = () => {}, theme = THEME.PRIMARY, children }) => {
 	return (
 		<StyledButton onClick={onClick} theme={theme}>
 			{children}
 		</StyledButton>
 	);
 };
-
-export default Button;
