@@ -17,6 +17,7 @@ import { ScrollableSection } from "../components/ScrollableSection";
 import { Footer } from "../components/Footer";
 import { useWeel } from "../utils/useWeel";
 import { TextSlice } from "../components/TextSlice";
+import { StyledHidenContent } from "../components/Content";
 
 export default function AboutUs() {
 	//all steps
@@ -57,7 +58,7 @@ export default function AboutUs() {
 	}, [currentStep]);
 
 	return (
-		<div onWheel={handleWheel}>
+		<StyledHidenContent onWheel={handleWheel}>
 			<Section theme={theme} ref={stepsRefs[0]}>
 				<StyledAboutUs>
 					<TextSlice textStyles={TEXT_TYPE.description}>
@@ -217,6 +218,6 @@ export default function AboutUs() {
 				</StyledStandFor>
 			</Section>
 			<Footer theme={theme} ref={stepsRefs[18]} />
-		</div>
+		</StyledHidenContent>
 	);
 }

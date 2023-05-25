@@ -16,6 +16,7 @@ import { useEffect, useRef } from "react";
 import { useWeel } from "../utils/useWeel";
 import { Footer } from "../components/Footer";
 import { TextSlice } from "../components/TextSlice";
+import { StyledHidenContent } from "../components/Content";
 
 export default function Landing() {
 	//all steps
@@ -51,7 +52,7 @@ export default function Landing() {
 	}, [currentStep]);
 
 	return (
-		<div onWheel={handleWheel}>
+		<StyledHidenContent onWheel={handleWheel}>
 			<Section theme={theme} ref={stepsRefs[0]}>
 				<StyledVideo>
 					<StyledVideoSource src="" autoPlay loop muted></StyledVideoSource>
@@ -110,42 +111,42 @@ export default function Landing() {
 			</Section>
 			<Section theme={theme} ref={stepsRefs[11]}>
 				<StyledWork>
-					<h1>Work</h1>
-					<p>
+					<TextSlice textStyles={TEXT_TYPE.title}>Work</TextSlice>
+					<TextSlice textStyles={TEXT_TYPE.description}>
 						Brands are more than just strategy and design. They are living organisms that inspire.
 						To provide the highest-end results, we use cutting-edge techniques and tailored
 						processes that deliver.
-					</p>
+					</TextSlice>
 					<div>
 						--------------------------------------------------------------------- FEATURED WORK
 					</div>
-					<h1>Work List Component</h1>
+					<TextSlice textStyles={TEXT_TYPE.title}>Work List Component</TextSlice>
 				</StyledWork>
 			</Section>
 			<Section theme={theme} ref={stepsRefs[12]}>
 				<StyledOneHundredPercent>
-					<h1>Evolve your brand to its 0% a 100%</h1>
-					<p>
+					<TextSlice textStyles={TEXT_TYPE.title}>Evolve your brand to its 0% a 100%</TextSlice>
+					<TextSlice textStyles={TEXT_TYPE.description}>
 						We take really few projects at a time, guaranteeing that we can deeply immerse on your
 						brand’s current situation and provide high-end solutions to its needs. If you’re not
 						opposed to getting your brand to the next level, get in touch as soon as possible before
 						we’re fully booked.
-					</p>
+					</TextSlice>
 				</StyledOneHundredPercent>
 			</Section>
 			<Section theme={theme} ref={stepsRefs[13]}>
 				<StyledAwards>
-					<h1>Awards</h1>
-					<p>
+					<TextSlice textStyles={TEXT_TYPE.title}>Awards</TextSlice>
+					<TextSlice textStyles={TEXT_TYPE.description}>
 						Despite being a new agency, our innovative vision & approach are skyrocketing within the
 						industry.
-					</p>
-					<h3>AWARD Component</h3>
-					<h3>AWARD Component</h3>
+					</TextSlice>
+					<TextSlice textStyles={TEXT_TYPE.subtitle}>AWARD Component</TextSlice>
+					<TextSlice textStyles={TEXT_TYPE.subtitle}>AWARD Component</TextSlice>
 					<a href="#">- Other mentions and awards</a>
 				</StyledAwards>
 			</Section>
 			<Footer theme={theme} ref={stepsRefs[14]} />
-		</div>
+		</StyledHidenContent>
 	);
 }

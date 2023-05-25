@@ -2,6 +2,9 @@ import styled from "styled-components";
 
 const StyledContent = styled.div`
 	margin-top: 10vh;
+`;
+
+export const StyledHidenContent = styled.div`
 	overflow: hidden;
 	height: 90vh;
 `;
