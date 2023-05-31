@@ -6,7 +6,6 @@ import { useTheme } from "../styles/ThemeContext";
 import { Button } from "./Button";
 import { useState } from "react";
 import { THEME } from "../utils/constants";
-// import { arrow } from "../assets/arrow";
 
 const StyledHeader = styled.div`
 	${({ theme }) => themes[theme]}
