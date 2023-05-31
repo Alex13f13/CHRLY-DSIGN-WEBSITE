@@ -36,7 +36,6 @@ export const ScrollableSection = ({
 	useEffect(() => {
 		if (!activeSection) {
 			if (beforeCurrentStep > currentStep) setSliceActive(-1);
-
 			return;
 		}
 

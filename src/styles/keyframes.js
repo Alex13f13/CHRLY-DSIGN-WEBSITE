@@ -17,3 +17,21 @@ export const fadeOut = keyframes`
     opacity: 0;
   }
 `;
+
+export const moveLeft = keyframes`
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100px);
+  }
+`;
+
+export const moveRight = keyframes`
+  from {
+    transform: translateX(-100px);
+  }
+  to {
+    transform: translateX(0);
+  }
+`;

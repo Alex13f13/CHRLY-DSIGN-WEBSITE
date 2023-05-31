@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { THEME } from "../utils/constants";
 import { animations } from "../styles/animations";
 import { textTypes } from "../styles/textTypes";
@@ -11,6 +11,7 @@ const StyledTextSlice = styled.div`
 	${(props) =>
 		props?.sliceActive ? "" : props?.theme === THEME.primary ? "color: #202024" : "color: #E3E3E3"};
 	${(props) => (props?.sliceActive ? animations[props?.animIn] : animations[props?.animOut])}
+	${(props) => props?.textExtraStyles}
 `;
 
 export const TextSlice = ({
@@ -18,6 +19,7 @@ export const TextSlice = ({
 	animOut = ANIMATION.default,
 	textStyles = TEXT_TYPE.description,
 	sliceActive = true,
+	textExtraStyles = css``,
 	theme,
 	children,
 }) => {
@@ -28,6 +30,7 @@ export const TextSlice = ({
 			animOut={animOut}
 			theme={theme}
 			sliceActive={sliceActive}
+			textExtraStyles={textExtraStyles}
 		>
 			{children}
 		</StyledTextSlice>

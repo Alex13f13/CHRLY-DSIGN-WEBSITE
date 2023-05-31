@@ -77,11 +77,12 @@ export default function Landing() {
 					</TextSlice>
 					<ScrollableSection
 						texts={["BRANDING ", "DESIGN", "MOTION", "IDENTIFY", "INTERFACE", "EVOLUTION"]}
-						textStyles={TEXT_TYPE.title}
+						textStyles={TEXT_TYPE.superTitle}
 						currentStep={currentStep}
 						activeSection={introSteps.includes(currentStep)}
 						animSectIn={ANIMATION.fadeIn}
 						animSectOut={ANIMATION.fadeOut}
+						sectionStyles={{ width: "400%", overflow: "hidden", height: "40vh" }}
 					/>
 				</StyledIntro>
 			</Section>
