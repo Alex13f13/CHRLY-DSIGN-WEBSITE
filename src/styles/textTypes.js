@@ -2,7 +2,7 @@ import { css } from "styled-components";
 
 export const textTypes = {
 	superTitle: css`
-		font-size: 8.33333333vw;
+		font-size: 12vw;
 		font-weight: 700;
 	`,
 	title: css`
@@ -10,7 +10,7 @@ export const textTypes = {
 		font-weight: 500;
 	`,
 	subTitle: css`
-		font-size: 1vw;
+		font-size: 1.6vw;
 		font-weight: 400;
 	`,
 	description: css`

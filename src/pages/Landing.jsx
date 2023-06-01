@@ -75,8 +75,8 @@ export default function Landing() {
 						textStyles={TEXT_TYPE.subtitle}
 						textExtraStyles={{
 							height: "40%",
-							marginLeft: "15%",
-							width: "52%",
+							marginLeft: "10%",
+							width: "48%",
 							display: "flex",
 							alignItems: "center",
 							justifyContent: "center",
@@ -96,7 +96,7 @@ export default function Landing() {
 							width: "400%",
 							overflow: "hidden",
 							height: "40%",
-							marginLeft: "15%",
+							marginLeft: "10%",
 						}}
 						textExtraStyles={{
 							marginRight: "0.5%",
@@ -115,13 +115,13 @@ export default function Landing() {
 				<StyledOffer>
 					<ScrollableSection
 						texts={["EVOLUTI", "ON"]}
-						textStyles={TEXT_TYPE.title}
+						textStyles={TEXT_TYPE.superTitle}
 						currentStep={currentStep}
 						activeSection={offerSteps.includes(currentStep)}
 						// animSectIn={ANIMATION.fadeIn}
 						animSectOut={ANIMATION.fadeOut}
 					/>
-					<TextSlice textStyles={TEXT_TYPE.description}>
+					<TextSlice textStyles={TEXT_TYPE.subtitle}>
 						Digital Brands are the future in the now. Why then use the same approach of the last 80
 						years? By understanding their true nature, we provide the ultimate digital brand push
 						that will get them on the path to their dream results.
