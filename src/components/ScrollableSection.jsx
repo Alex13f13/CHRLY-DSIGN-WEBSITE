@@ -13,7 +13,6 @@ const StyledSection = styled.div`
 	${(props) => props?.sectionStyles}
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
 	align-items: center;
 	overflow: hidden;
 `;
@@ -21,6 +20,7 @@ const StyledSection = styled.div`
 export const ScrollableSection = ({
 	texts = [],
 	sectionStyles = css``,
+	textExtraStyles = css``,
 	animIn = ANIMATION.default,
 	animOut = ANIMATION.default,
 	animSectIn = ANIMATION.default,
@@ -64,6 +64,7 @@ export const ScrollableSection = ({
 			{texts?.map((paragraph, index) => (
 				<TextSlice
 					textStyles={textStyles}
+					textExtraStyles={textExtraStyles}
 					animIn={animIn}
 					animOut={animOut}
 					theme={theme}

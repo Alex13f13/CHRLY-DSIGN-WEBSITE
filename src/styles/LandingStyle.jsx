@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledVideo = styled.div`
-	height: 100vh;
+	height: 100%;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -14,7 +14,10 @@ export const StyledVideoSource = styled.video`
 	width: 100%;
 `;
 
-export const StyledIntro = styled.div``;
+export const StyledIntro = styled.div`
+	height: 100%;
+	width: 100%;
+`;
 
 export const StyledOffer = styled.div``;
 

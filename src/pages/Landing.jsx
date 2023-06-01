@@ -71,7 +71,17 @@ export default function Landing() {
 				)}
 			>
 				<StyledIntro>
-					<TextSlice textStyles={TEXT_TYPE.description}>
+					<TextSlice
+						textStyles={TEXT_TYPE.subtitle}
+						textExtraStyles={{
+							height: "40%",
+							marginLeft: "15%",
+							width: "52%",
+							display: "flex",
+							alignItems: "center",
+							justifyContent: "center",
+						}}
+					>
 						Welcome to CHRLY DSIGN, the award winning Digital Multimedia Branding agency that makes
 						digital brands evolve so much, their big dreams become tiny.
 					</TextSlice>
@@ -82,7 +92,15 @@ export default function Landing() {
 						activeSection={introSteps.includes(currentStep)}
 						animSectIn={ANIMATION.fadeIn}
 						animSectOut={ANIMATION.fadeOut}
-						sectionStyles={{ width: "400%", overflow: "hidden", height: "40vh" }}
+						sectionStyles={{
+							width: "400%",
+							overflow: "hidden",
+							height: "40%",
+							marginLeft: "15%",
+						}}
+						textExtraStyles={{
+							marginRight: "0.5%",
+						}}
 					/>
 				</StyledIntro>
 			</Section>

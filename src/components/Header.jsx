@@ -30,6 +30,7 @@ const StyledButtons = styled.div`
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
+	width: 25%;
 `;
 
 const StyledBody = styled.div`
@@ -51,8 +52,8 @@ const StyledLinkContainer = styled.div`
 const StyledLink = styled(Link)`
 	text-decoration: none;
 	color: ${({ theme }) => (theme === THEME.primary ? "#e3e3e3" : "#000000")};
-	font-size: 24px;
-	margin-bottom: 10px;
+	font-size: 1.6667vw;
+	margin-bottom: 0.6944vw;
 	cursor: pointer;
 `;
 
@@ -63,8 +64,8 @@ const StyledFooter = styled.div`
 	align-items: center;
 
 	p {
-		font-size: 14px;
-		margin-right: 20px;
+		font-size: 0.9722vw;
+		margin-right: 1.3889vw;
 		color: ${({ theme }) => (theme === THEME.primary ? "#77788C" : "#E3E3E3")};
 	}
 `;
