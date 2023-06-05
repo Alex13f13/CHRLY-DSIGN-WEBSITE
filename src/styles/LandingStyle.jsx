@@ -23,6 +23,14 @@ export const StyledOffer = styled.div``;
 
 export const StyledWork = styled.div``;
 
+export const StyledWorkBar = styled.div`
+	height: 10%;
+	width: 100%;
+	margin-top: 5%;
+	display: flex;
+	align-items: center;
+`;
+
 export const StyledOneHundredPercent = styled.div`
 	display: flex;
 	justify-content: center;

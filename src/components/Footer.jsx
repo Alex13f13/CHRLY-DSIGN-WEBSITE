@@ -16,6 +16,7 @@ const StyledFooter = styled.section`
 
 	p {
 		margin: 0;
+		font-size: 1.1vw;
 	}
 `;
 
@@ -33,7 +34,7 @@ const StyledLogo = styled.div`
 	flex-direction: column;
 	padding: 10% 25%;
 	p {
-		margin-bottom: 10px;
+		margin-bottom: 0.6944vw;
 	}
 `;
 
@@ -47,7 +48,8 @@ const StyledLinks = styled.div`
 	a {
 		text-decoration: none;
 		color: ${({ theme }) => themes[theme]};
-		margin-bottom: 4px;
+		margin-bottom: 0.2778vw;
+		font-size: 1.1vw;
 	}
 `;
 
@@ -62,12 +64,14 @@ const StyledMails = styled.div`
 		text-decoration: none;
 		color: ${({ theme }) => themes[theme]};
 		font-weight: 700;
+		font-size: 1.1vw;
 	}
 `;
 
 const StyledMail = styled.div`
 	p {
-		margin-bottom: 6px;
+		margin-bottom: 0.4167vw;
+		font-size: 1.1vw;
 	}
 `;
 
@@ -75,13 +79,22 @@ const StyledCopiright = styled.div`
 	grid-area: copiright;
 	${gridCenteringStyles}
 	color: #77788C;
+	padding: 0 25%;
+	justify-content: flex-start;
+	p {
+		font-size: 0.8vw;
+	}
 `;
 
 const StyledSocial = styled.div`
 	grid-area: social;
 	${gridCenteringStyles}
-	justify-content: space-around;
+	justify-content: space-between;
 	color: #77788c;
+	padding: 0 20% 0 9%;
+	p {
+		font-size: 0.8vw;
+	}
 `;
 
 // eslint-disable-next-line react/prop-types
