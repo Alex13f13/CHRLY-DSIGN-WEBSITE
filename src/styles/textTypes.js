@@ -15,6 +15,6 @@ export const textTypes = {
 	`,
 	description: css`
 		font-size: 0.83333333vw;
-		font-weight: 400;
+		font-weight: 300;
 	`,
 };
