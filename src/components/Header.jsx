@@ -67,6 +67,10 @@ const StyledFooter = styled.div`
 		font-size: 0.9722vw;
 		margin-right: 1.3889vw;
 		color: ${({ theme }) => (theme === THEME.primary ? "#77788C" : "#E3E3E3")};
+
+		&:hover {
+			cursor: pointer;
+		}
 	}
 `;
 
@@ -85,6 +89,10 @@ export default function Header() {
 
 	const sendEmail = () => {
 		window.open("mailto:hello@chrlydsign.com");
+	};
+
+	const instagram = () => {
+		window.open("https://instagram.com/chrly_dsign?igshid=OGQ5ZDc2ODk2ZA==");
 	};
 
 	return (
@@ -110,24 +118,25 @@ export default function Header() {
 						<StyledLink theme={theme} onClick={handleMenu} to={paths.aboutUs}>
 							About Us
 						</StyledLink>
-						<StyledLink theme={theme} onClick={handleMenu} to={paths.legal}>
+						<StyledLink theme={theme} onClick={handleMenu} to={paths.landingWorks}>
+							Work
+						</StyledLink>
+						<StyledLink theme={theme} onClick={handleMenu} to={paths.aboutUsWhatwedo}>
+							What we do
+						</StyledLink>
+						<StyledLink theme={theme} onClick={handleMenu} to={paths.landingEvolve}>
+							Evolve
+						</StyledLink>
+						<StyledLink theme={theme} onClick={handleMenu} to={paths.landingAwards}>
+							Awards
+						</StyledLink>
+						{/* <StyledLink theme={theme} onClick={handleMenu} to={paths.legal}>
 							Legal
-						</StyledLink>
-						<StyledLink theme={theme} onClick={handleMenu} to={paths.legal}>
-							Example Page
-						</StyledLink>
-						<StyledLink theme={theme} onClick={handleMenu} to={paths.legal}>
-							Page Example
-						</StyledLink>
-						<StyledLink theme={theme} onClick={handleMenu} to={paths.legal}>
-							Other Link Example
-						</StyledLink>
-						{/* <StyledLink theme={theme} to={`${paths.workDetails}?workId=0`}>Work 1</StyledLink>
-			<StyledLink theme={theme} to={`${paths.workDetails}?workId=1`}>Work 2</StyledLink> */}
+						</StyledLink> */}
 					</StyledLinkContainer>
 					<StyledFooter theme={theme}>
-						<p>hello@chrlydsign.com</p>
-						<p>Follow on Instagram</p>
+						<p onClick={sendEmail}>hello@chrlydsign.com</p>
+						<p onClick={instagram}>Follow on Instagram</p>
 					</StyledFooter>
 				</StyledBody>
 			)}

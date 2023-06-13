@@ -1,13 +1,38 @@
-import { useSearchParams } from "react-router-dom";
-import works from "../utils/works.json";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useTheme } from "../styles/ThemeContext";
+import { THEME } from "../utils/constants";
+import { useEffect } from "react";
+import { Footer } from "../components/Footer";
+import { TextSlice } from "../components/TextSlice";
+import styled from "styled-components";
+import { themes } from "../styles/themes";
+import { TEXT_TYPE } from "../utils/constants";
+
+const StyledWork = styled.div`
+	${({ theme }) => themes[theme]}
+`;
+
+const StyleContainer = styled.div`
+	width: 100%;
+	height: 90vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+`;
 
 export default function WorkDetails() {
-	const [searchParams] = useSearchParams();
-	const workId = searchParams.get("workId");
+	//theme
+	const { theme, selectTheme } = useTheme();
+	useEffect(() => {
+		selectTheme(THEME.primary);
+	}, []);
 
-	if (!workId || !works[workId]) {
-		return <h2>Work not found (Componente para esto)</h2>;
-	}
-
-	return works ? <h1>Work Name: {works[workId]?.title}</h1> : <h2>Loading...</h2>;
+	return (
+		<StyledWork theme={theme}>
+			<StyleContainer>
+				<TextSlice textStyles={TEXT_TYPE.title}>Work in progress</TextSlice>
+			</StyleContainer>
+			<Footer theme={theme} />
+		</StyledWork>
+	);
 }

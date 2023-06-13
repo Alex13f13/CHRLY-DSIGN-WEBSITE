@@ -3,23 +3,34 @@ import { Section } from "../components/Section";
 import { useTheme } from "../styles/ThemeContext";
 import { THEME, TEXT_TYPE, ANIMATION } from "../utils/constants";
 import { useEffect, useRef } from "react";
-
-import {
-	StyledAboutUs,
-	StyledWhatWeDo,
-	StyledBackbone,
-	StyledMision,
-	StyledWhy,
-	StyledDifferent,
-	StyledStandFor,
-} from "../styles/AboutUsStyle";
 import { ScrollableSection } from "../components/ScrollableSection";
 import { Footer } from "../components/Footer";
 import { useWeel } from "../utils/useWeel";
 import { TextSlice } from "../components/TextSlice";
 import { StyledHidenContent } from "../components/Content";
+import { useSearchParams } from "react-router-dom";
+
+import styled from "styled-components";
+
+const StyledAboutUs = styled.div``;
+
+const StyledWhatWeDo = styled.div``;
+
+const StyledBackbone = styled.div``;
+
+const StyledMision = styled.div``;
+
+const StyledWhy = styled.div``;
+
+const StyledDifferent = styled.div``;
+
+const StyledStandFor = styled.div``;
 
 export default function AboutUs() {
+	const [searchParams] = useSearchParams();
+	const linkParam = searchParams?.get("link");
+	console.log(linkParam);
+
 	//all steps
 	const steps = [
 		useRef(null), // 0

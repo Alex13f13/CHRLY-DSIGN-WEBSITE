@@ -1,19 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import styled from "styled-components";
 import { Section } from "../components/Section";
-import {
-	StyledVideo,
-	StyledIntro,
-	StyledOffer,
-	StyledWork,
-	StyledWorkBar,
-	StyledOneHundredPercent,
-	StyledAwards,
-	StyledAwardDescription,
-	StyledAwardYears,
-	StyledAwardExtra,
-	StyledAwardsContainer,
-	StyledVideoSource,
-} from "../styles/LandingStyle";
 import { useTheme } from "../styles/ThemeContext";
 import { ScrollableSection } from "../components/ScrollableSection";
 import { THEME, TEXT_TYPE, ANIMATION } from "../utils/constants";
@@ -22,8 +9,88 @@ import { useWeel } from "../utils/useWeel";
 import { Footer } from "../components/Footer";
 import { TextSlice } from "../components/TextSlice";
 import { StyledHidenContent } from "../components/Content";
+import { useSearchParams } from "react-router-dom";
+
+const StyledVideo = styled.div`
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+`;
+
+const StyledVideoSource = styled.video`
+	height: 100%;
+	width: 100%;
+`;
+
+const StyledIntro = styled.div`
+	height: 100%;
+	width: 100%;
+`;
+
+const StyledOffer = styled.div``;
+
+const StyledWork = styled.div``;
+
+const StyledWorkBar = styled.div`
+	height: 10%;
+	width: 100%;
+	margin-top: 5%;
+	display: flex;
+	align-items: center;
+`;
+
+const StyledOneHundredPercent = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 100%;
+`;
+
+const StyledAwards = styled.div`
+	height: 100%;
+	width: 100%;
+	display: flex;
+`;
+
+const StyledAwardDescription = styled.div`
+	height: 100%;
+	width: 20%;
+	padding: 10%;
+`;
+
+const StyledAwardsContainer = styled.div`
+	height: 100%;
+	width: 60%;
+`;
+
+const StyledAwardYears = styled.div`
+	height: 70%;
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+`;
+
+const StyledAwardExtra = styled.div`
+	height: 30%;
+	width: 100%;
+	padding-left: 18%;
+	padding-top: 3%;
+
+	a {
+		color: #e3e3e3;
+		text-decoration: none;
+	}
+`;
 
 export default function Landing() {
+	const [searchParams] = useSearchParams();
+	const linkParam = searchParams?.get("link");
+	console.log(linkParam);
 	//all steps
 	const steps = [
 		useRef(null), // 0
