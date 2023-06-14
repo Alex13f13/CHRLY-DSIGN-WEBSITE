@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { paths } from "./paths";
-import AboutUs from "../pages/AboutUs";
-import Landing from "../pages/Landing";
+import AboutUs from "../pages/AboutUs/AboutUs";
+import Landing from "../pages/Landing/Landing";
 import Legal from "../pages/Legal";
 import NotFound from "./NotFound";
 import WorkDetails from "../pages/WorkDetails";
