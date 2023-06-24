@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Section } from "../../components/Section";
+import { BigSection } from "../../components/BigSection";
 import { useTheme } from "../../styles/ThemeContext";
 import { THEME } from "../../utils/constants";
 import { useEffect, useRef } from "react";
@@ -48,7 +49,7 @@ export default function Landing() {
 	}, [currentStep]);
 
 	return (
-		<StyledHidenContent onWheel={handleWheel}>
+		<StyledHidenContent scrolleable={currentStep === 10} onWheel={handleWheel}>
 			<Section theme={theme} ref={stepsRefs[0]}>
 				<Video />
 			</Section>
@@ -72,9 +73,9 @@ export default function Landing() {
 			>
 				<Offer currentStep={currentStep} steps={[8, 9]} />
 			</Section>
-			<Section theme={theme} ref={stepsRefs[10]}>
+			<BigSection theme={theme} ref={stepsRefs[10]}>
 				<WorkList />
-			</Section>
+			</BigSection>
 			<Section theme={theme} ref={stepsRefs[11]}>
 				<OneHundredPercent />
 			</Section>

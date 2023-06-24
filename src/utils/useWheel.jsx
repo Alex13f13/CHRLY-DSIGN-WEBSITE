@@ -1,9 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useElementScroll } from "./useElementScroll";
 
 export const useWheel = (stepsRefs = []) => {
 	const [currentStep, setCurrentStep] = useState(0);
+	const [isScrollingDown, setIsScrollingDown] = useState(true);
+	const prevScrollTop = useRef(0);
 	const [isContainerScrolling, handleScroll] = useElementScroll();
 
 	useEffect(() => {
@@ -12,21 +14,28 @@ export const useWheel = (stepsRefs = []) => {
 
 	const handleWheel = (e) => {
 		if (isContainerScrolling()) return;
-		scrollToSection();
 		handleScroll();
 
 		const { deltaY } = e;
+		const section = stepsRefs[currentStep]?.current;
+		const sectionRect = section.getBoundingClientRect();
+		const sectionRectBottom = Math.floor(sectionRect.bottom);
+		const sectionRectTop = Math.floor(sectionRect.top);
+
 		if (deltaY > 0) {
 			// Scroll down
-			if (currentStep < stepsRefs.length - 1) {
+			setIsScrollingDown(true);
+			if (sectionRectBottom <= window.innerHeight && currentStep < stepsRefs.length - 1) {
 				setCurrentStep(currentStep + 1);
 			}
 		} else {
 			// Scroll up
-			if (currentStep > 0) {
+			setIsScrollingDown(false);
+			if (sectionRectTop >= 0 && currentStep > 0) {
 				setCurrentStep(currentStep - 1);
 			}
 		}
+		prevScrollTop.current = window.scrollY;
 	};
 
 	const scrollToSection = () => {
@@ -35,12 +44,9 @@ export const useWheel = (stepsRefs = []) => {
 			const sectionRect = section.getBoundingClientRect();
 			const containerElement = section.parentElement;
 			const containerRect = containerElement.getBoundingClientRect();
+			const focusOn = isScrollingDown ? 0 : containerRect.height - sectionRect.height;
 
-			const scrollTop =
-				sectionRect.top -
-				containerRect.top +
-				containerElement.scrollTop -
-				(containerRect.height - sectionRect.height) / 2;
+			const scrollTop = sectionRect.top - containerRect.top + containerElement.scrollTop - focusOn;
 
 			containerElement.scrollTop = scrollTop;
 		}
