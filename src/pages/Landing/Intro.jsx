@@ -34,15 +34,16 @@ export default function Intro({ currentStep, steps }) {
 				animSectIn={ANIMATION.fadeIn}
 				animSectOut={ANIMATION.fadeOut}
 				sectionStyles={{
-					width: "400%",
-					overflow: "hidden",
+					width: "100%",
 					height: "40%",
-					marginLeft: "10%",
+					paddingLeft: "9%",
 				}}
 				textExtraStyles={{
-					marginRight: "0.5%",
+					marginRight: "1.5%",
 				}}
-			/>
+			>
+				<div style={{ flex: "0 0 auto", marginLeft: "15%", marginRight: "15%" }}></div>
+			</ScrollableSection>
 		</StyledIntro>
 	);
 }

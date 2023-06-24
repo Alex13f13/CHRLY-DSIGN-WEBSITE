@@ -62,3 +62,53 @@ export default function WorkList() {
 		</StyledWork>
 	);
 }
+
+// https://css-tricks.com/books/greatest-css-tricks/scroll-animation/
+
+// HTML
+// <div class="progress"></div>
+
+// CSS
+// body {
+//   padding: 0;
+//   margin: 0;
+//   min-height: 500vh;
+//   background-color: rgb(139, 201, 228);
+//   animation: body 1s linear;
+// }
+// @keyframes body {
+//   to {
+//     background-color: rgb(19, 48, 97);
+//   }
+// }
+
+// .progress {
+//   height: 3px;
+//   width: 0%;
+//   background-color: #fff;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   animation: progress 1s linear;
+// }
+// @keyframes progress {
+//   to {
+//     background-color: rgb(20, 255, 226);
+//     width: 100%;
+//   }
+// }
+
+// :root * {
+//   /* Pause the animation */
+//   animation-play-state: paused;
+//   /* Bind the animation to scroll */
+//   animation-delay: calc(var(--scroll) * -1s);
+//   /* These last 2 properites clean up overshoot weirdness */
+//   animation-iteration-count: 1;
+//   animation-fill-mode: both;
+// }
+
+// JS
+// window.addEventListener('scroll', () => {
+//   document.body.style.setProperty('--scroll',window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+// }, false);

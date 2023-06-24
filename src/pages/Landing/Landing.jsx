@@ -3,7 +3,7 @@ import { Section } from "../../components/Section";
 import { useTheme } from "../../styles/ThemeContext";
 import { THEME } from "../../utils/constants";
 import { useEffect, useRef } from "react";
-import { useWeel } from "../../utils/useWeel";
+import { useWheel } from "../../utils/useWheel";
 import { Footer } from "../../components/Footer";
 import { StyledHidenContent } from "../../components/Content";
 import { useSearchParams } from "react-router-dom";
@@ -37,7 +37,7 @@ export default function Landing() {
 		useRef(null), // 13
 	];
 
-	const { handleWheel, stepsRefs, currentStep } = useWeel(steps);
+	const { handleWheel, stepsRefs, currentStep } = useWheel(steps);
 
 	//theme
 	const { theme, selectTheme } = useTheme();

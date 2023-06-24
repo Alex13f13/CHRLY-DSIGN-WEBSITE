@@ -7,6 +7,8 @@ const StyledContent = styled.div`
 export const StyledHidenContent = styled.div`
 	overflow: hidden;
 	height: 90vh;
+	position: relative;
+	scroll-behavior: smooth;
 `;
 
 // eslint-disable-next-line react/prop-types

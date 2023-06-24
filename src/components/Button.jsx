@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { themes } from "../styles/themes";
 import { THEME } from "../utils/constants";
-import arrow from "../assets/arrow.svg";
 
 const StyledButton = styled.div`
 	${({ theme }) => themes[theme]}
@@ -20,20 +19,20 @@ const StyledButton = styled.div`
 	}
 `;
 
-const StyledIcon = styled.div`
+const StyledButtonIcon = styled.div`
 	width: 1.38888889vw;
 	height: 1.38888889vw;
 	margin-left: 0.69444444vw;
 	background-color: ${({ theme }) => (theme === THEME.primary ? "#e3e3e3" : "#000000")};
-	mask: url(${arrow}) no-repeat center / contain;
+	mask: ${({ icon }) => `url(${icon}) no-repeat center / contain`};
 `;
 
 // eslint-disable-next-line react/prop-types
-export const Button = ({ onClick = () => {}, theme = THEME.primary, text = "" }) => {
+export const Button = ({ onClick = () => {}, theme = THEME.primary, text = "", icon = null }) => {
 	return (
 		<StyledButton onClick={onClick} theme={theme}>
 			{text}
-			<StyledIcon theme={theme} />
+			{icon && <StyledButtonIcon theme={theme} icon={icon} />}
 		</StyledButton>
 	);
 };

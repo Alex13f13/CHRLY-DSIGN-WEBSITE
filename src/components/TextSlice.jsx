@@ -5,6 +5,7 @@ import { THEME } from "../utils/constants";
 import { animations } from "../styles/animations";
 import { textTypes } from "../styles/textTypes";
 import { ANIMATION, TEXT_TYPE } from "../utils/constants";
+import { forwardRef } from "react";
 
 const StyledTextSlice = styled.div`
 	${(props) => textTypes[props?.textStyles]}
@@ -14,15 +15,18 @@ const StyledTextSlice = styled.div`
 	${(props) => props?.textExtraStyles}
 `;
 
-export const TextSlice = ({
-	animIn = ANIMATION.default,
-	animOut = ANIMATION.default,
-	textStyles = TEXT_TYPE.description,
-	sliceActive = true,
-	textExtraStyles = css``,
-	theme,
-	children,
-}) => {
+const TextSliceBase = (
+	{
+		animIn = ANIMATION.default,
+		animOut = ANIMATION.default,
+		textStyles = TEXT_TYPE.description,
+		sliceActive = true,
+		textExtraStyles = css``,
+		theme,
+		children,
+	},
+	ref
+) => {
 	return (
 		<StyledTextSlice
 			textStyles={textStyles}
@@ -31,8 +35,11 @@ export const TextSlice = ({
 			theme={theme}
 			sliceActive={sliceActive}
 			textExtraStyles={textExtraStyles}
+			ref={ref}
 		>
 			{children}
 		</StyledTextSlice>
 	);
 };
+
+export const TextSlice = forwardRef(TextSliceBase);

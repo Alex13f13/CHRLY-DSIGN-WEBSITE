@@ -6,6 +6,9 @@ import { useTheme } from "../styles/ThemeContext";
 import { Button } from "./Button";
 import { useState } from "react";
 import { THEME } from "../utils/constants";
+import diagonalArrow from "../assets/diagonalArrow.svg";
+import cross from "../assets/cross.svg";
+import hamburgerIcon from "../assets/hamburgerIcon.svg";
 
 const StyledHeader = styled.div`
 	${({ theme }) => themes[theme]}
@@ -101,11 +104,16 @@ export default function Header() {
 				{theme === THEME.primary ? <p>CHRLY DSIGN</p> : <p>CHRLY DSIGN</p>}
 				{/* <img src="" alt="CHRLY DSIGN LOGO" /> */}
 				<StyledButtons>
-					<Button theme={useOppositeTheme()} onClick={sendEmail} text="LET’S TALK" />
+					<Button
+						theme={useOppositeTheme()}
+						onClick={sendEmail}
+						text="LET’S TALK"
+						icon={diagonalArrow}
+					/>
 					{open ? (
-						<Button theme={theme} onClick={handleMenu} text="CLOSE" />
+						<Button theme={theme} onClick={handleMenu} text="CLOSE" icon={cross} />
 					) : (
-						<Button theme={theme} onClick={handleMenu} text="MENU" />
+						<Button theme={theme} onClick={handleMenu} text="MENU" icon={hamburgerIcon} />
 					)}
 				</StyledButtons>
 			</StyledTop>

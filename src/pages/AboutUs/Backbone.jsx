@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
 import styled from "styled-components";
-import ScrollableSection from "../../components/ScrollableSection";
-import { TEXT_TYPE } from "../../components/TextSlice";
-import { ANIMATION } from "../../utils/constants";
-import TextSlice from "../../components/TextSlice";
+import { ScrollableSection } from "../../components/ScrollableSection";
+import { ANIMATION, TEXT_TYPE } from "../../utils/constants";
+import { TextSlice } from "../../components/TextSlice";
 
 const StyledBackbone = styled.div``;
 

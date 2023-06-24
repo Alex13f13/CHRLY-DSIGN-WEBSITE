@@ -4,7 +4,7 @@ import { useTheme } from "../../styles/ThemeContext";
 import { THEME } from "../../utils/constants";
 import { useEffect, useRef } from "react";
 import { Footer } from "../../components/Footer";
-import { useWeel } from "../../utils/useWeel";
+import { useWheel } from "../../utils/useWheel";
 import { StyledHidenContent } from "../../components/Content";
 import { useSearchParams } from "react-router-dom";
 import AboutUsSection from "./AboutUsSection";
@@ -43,7 +43,7 @@ export default function AboutUs() {
 		useRef(null), // 18
 	];
 
-	const { handleWheel, stepsRefs, currentStep } = useWeel(steps);
+	const { handleWheel, stepsRefs, currentStep } = useWheel(steps);
 
 	//theme
 	const { theme, selectTheme } = useTheme();

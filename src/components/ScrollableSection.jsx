@@ -6,15 +6,18 @@ import { ANIMATION, TEXT_TYPE } from "../utils/constants";
 import { useTheme } from "../styles/ThemeContext";
 import { TextSlice } from "./TextSlice";
 import { animations } from "../styles/animations";
+import { useRef, createRef } from "react";
 
 const StyledSection = styled.div`
 	${(props) =>
 		props?.activeSection ? animations[props?.animSectIn] : animations[props?.animSectOut]}
 	${(props) => props?.sectionStyles}
-	display: flex;
+  display: flex;
 	flex-direction: row;
 	align-items: center;
 	overflow: hidden;
+	position: relative;
+	scroll-behavior: smooth;
 `;
 
 export const ScrollableSection = ({
@@ -28,10 +31,14 @@ export const ScrollableSection = ({
 	textStyles = TEXT_TYPE.description,
 	activeSection = false,
 	currentStep = 0,
+	children,
 }) => {
 	const { theme } = useTheme();
 	const [sliceActive, setSliceActive] = useState(-1);
 	const [beforeCurrentStep, setBeforeCurrentStep] = useState(0);
+
+	const sliceRefs = useRef([]);
+	sliceRefs.current = texts.map((_, i) => sliceRefs.current[i] ?? createRef());
 
 	useEffect(() => {
 		if (!activeSection) {
@@ -39,19 +46,34 @@ export const ScrollableSection = ({
 			return;
 		}
 
-		let indice;
+		let index;
 
 		if (beforeCurrentStep > currentStep) {
-			indice = sliceActive - 1;
+			index = sliceActive - 1;
 		} else {
-			indice = sliceActive + 1;
+			index = sliceActive + 1;
 		}
 
 		setBeforeCurrentStep(currentStep);
 
-		if (indice >= texts.length) return;
+		if (index >= texts.length) return;
 
-		setSliceActive(indice);
+		setSliceActive(index);
+
+		if (sliceRefs.current[index]) {
+			const sliceElement = sliceRefs.current[index].current;
+			const containerElement = sliceElement.parentElement;
+
+			const sliceRect = sliceElement.getBoundingClientRect();
+			const containerRect = containerElement.getBoundingClientRect();
+
+			const paddingLeft = containerRect.width * 0.08;
+
+			const scrollLeft =
+				sliceRect.left - containerRect.left + containerElement.scrollLeft - paddingLeft;
+
+			containerElement.scrollLeft = scrollLeft;
+		}
 	}, [currentStep]);
 
 	return (
@@ -68,12 +90,14 @@ export const ScrollableSection = ({
 					animIn={animIn}
 					animOut={animOut}
 					theme={theme}
+					ref={sliceRefs.current[index]}
 					sliceActive={sliceActive === index}
 					key={index}
 				>
 					{paragraph}
 				</TextSlice>
 			))}
+			{children}
 		</StyledSection>
 	);
 };
