@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Section } from "../../components/Section";
 import { useTheme } from "../../styles/ThemeContext";
@@ -20,28 +21,7 @@ export default function AboutUs() {
 	const linkParam = searchParams?.get("link");
 	console.log(linkParam);
 
-	//all steps
-	const steps = [
-		useRef(null), // 0
-		useRef(null), // 1
-		useRef(null), // 2
-		useRef(null), // 3
-		useRef(null), // 4
-		useRef(null), // 5
-		useRef(null), // 6
-		useRef(null), // 7
-		useRef(null), // 8
-		useRef(null), // 9
-		useRef(null), // 10
-		useRef(null), // 11
-		useRef(null), // 12
-		useRef(null), // 13
-		useRef(null), // 14
-		useRef(null), // 15
-		useRef(null), // 16
-		useRef(null), // 17
-		useRef(null), // 18
-	];
+	const steps = Array.from({ length: 19 }).map(() => useRef(null));
 
 	const { handleWheel, stepsRefs, currentStep } = useWheel(steps);
 

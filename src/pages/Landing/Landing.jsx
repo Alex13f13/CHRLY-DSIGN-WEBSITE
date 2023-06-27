@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Section } from "../../components/Section";
 import { BigSection } from "../../components/BigSection";
@@ -15,24 +16,8 @@ import OneHundredPercent from "./OneHundredPercent";
 import Awards from "./Awards";
 
 export default function Landing() {
-	//all steps
-	const steps = [
-		useRef(null), // 0
-		useRef(null), // 1
-		useRef(null), // 2
-		useRef(null), // 3
-		useRef(null), // 4
-		useRef(null), // 5
-		useRef(null), // 6
-		useRef(null), // 7
-		useRef(null), // 8
-		useRef(null), // 9
-		useRef(null), // 10
-		useRef(null), // 11
-		useRef(null), // 12
-		useRef(null), // 13
-	];
-
+	// All steps
+	const steps = Array.from({ length: 14 }).map(() => useRef(null));
 	const { handleWheel, stepsRefs, currentStep } = useWheel(steps);
 
 	const allStepsRefs = {
