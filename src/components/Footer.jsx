@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { themes } from "../styles/themes";
 import { THEME } from "../utils/constants";
 import { forwardRef } from "react";
+import { Link } from "react-router-dom";
+import { paths } from "../router/paths";
 
 const StyledFooter = styled.section`
 	${({ theme }) => themes[theme]}
@@ -44,13 +46,13 @@ const StyledLinks = styled.div`
 	flex-direction: column;
 	align-items: flex-start;
 	padding: 0 25%;
+`;
 
-	a {
-		text-decoration: none;
-		color: ${({ theme }) => themes[theme]};
-		margin-bottom: 0.2778vw;
-		font-size: 1.1vw;
-	}
+const StyledLink = styled(Link)`
+	text-decoration: none;
+	color: ${({ theme }) => themes[theme]};
+	margin-bottom: 0.2778vw;
+	font-size: 1.1vw;
 `;
 
 const StyledMails = styled.div`
@@ -107,12 +109,24 @@ export default function FooterBase({ theme = THEME.primary }, ref) {
 				<p>Digital Multimedia Branding</p>
 			</StyledLogo>
 			<StyledLinks theme={theme}>
-				<a href="#">Home</a>
-				<a href="#">What we do</a>
-				<a href="#">About us</a>
-				<a href="#">Evolve</a>
-				<a href="#">Work</a>
-				<a href="#">Awards</a>
+				<StyledLink theme={theme} to={paths.landing}>
+					Home
+				</StyledLink>
+				<StyledLink theme={theme} to={paths.aboutUs}>
+					About Us
+				</StyledLink>
+				<StyledLink theme={theme} to={paths.landingWorks}>
+					Work
+				</StyledLink>
+				<StyledLink theme={theme} to={paths.aboutUsWhatwedo}>
+					What we do
+				</StyledLink>
+				<StyledLink theme={theme} to={paths.landingEvolve}>
+					Evolve
+				</StyledLink>
+				<StyledLink theme={theme} to={paths.landingAwards}>
+					Awards
+				</StyledLink>
 			</StyledLinks>
 			<StyledMails theme={theme}>
 				<StyledMail>
