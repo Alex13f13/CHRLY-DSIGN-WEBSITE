@@ -35,6 +35,24 @@ export default function Landing() {
 
 	const { handleWheel, stepsRefs, currentStep } = useWheel(steps);
 
+	const allStepsRefs = {
+		video: stepsRefs[0],
+		intro: (node) => (
+			(stepsRefs[1].current = node),
+			(stepsRefs[2].current = node),
+			(stepsRefs[3].current = node),
+			(stepsRefs[4].current = node),
+			(stepsRefs[5].current = node),
+			(stepsRefs[6].current = node),
+			(stepsRefs[7].current = node)
+		),
+		offer: (node) => ((stepsRefs[8].current = node), (stepsRefs[9].current = node)),
+		workList: stepsRefs[10],
+		oneHundredPercent: stepsRefs[11],
+		awards: stepsRefs[12],
+		footer: stepsRefs[13],
+	};
+
 	//theme
 	const { theme, selectTheme } = useTheme();
 	const whiteSections = [];
@@ -45,39 +63,25 @@ export default function Landing() {
 
 	return (
 		<StyledHidenContent scrolleable={currentStep === 10} onWheel={handleWheel}>
-			<Section theme={theme} ref={stepsRefs[0]}>
+			<Section theme={theme} ref={allStepsRefs?.video}>
 				<Video />
 			</Section>
-			<Section
-				theme={theme}
-				ref={(node) => (
-					(stepsRefs[1].current = node),
-					(stepsRefs[2].current = node),
-					(stepsRefs[3].current = node),
-					(stepsRefs[4].current = node),
-					(stepsRefs[5].current = node),
-					(stepsRefs[6].current = node),
-					(stepsRefs[7].current = node)
-				)}
-			>
+			<Section theme={theme} ref={allStepsRefs?.intro}>
 				<Intro currentStep={currentStep} steps={[2, 3, 4, 5, 6, 7]} />
 			</Section>
-			<Section
-				theme={theme}
-				ref={(node) => ((stepsRefs[8].current = node), (stepsRefs[9].current = node))}
-			>
+			<Section theme={theme} ref={allStepsRefs?.offer}>
 				<Offer currentStep={currentStep} steps={[8, 9]} />
 			</Section>
-			<BigSection theme={theme} ref={stepsRefs[10]}>
+			<BigSection theme={theme} ref={allStepsRefs?.workList}>
 				<WorkList />
 			</BigSection>
-			<Section theme={theme} ref={stepsRefs[11]}>
+			<Section theme={theme} ref={allStepsRefs?.oneHundredPercent}>
 				<OneHundredPercent />
 			</Section>
-			<Section theme={theme} ref={stepsRefs[12]}>
+			<Section theme={theme} ref={allStepsRefs?.awards}>
 				<Awards />
 			</Section>
-			<Footer theme={theme} ref={stepsRefs[13]} />
+			<Footer theme={theme} ref={allStepsRefs?.footer} />
 		</StyledHidenContent>
 	);
 }

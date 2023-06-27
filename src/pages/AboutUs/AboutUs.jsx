@@ -45,6 +45,34 @@ export default function AboutUs() {
 
 	const { handleWheel, stepsRefs, currentStep } = useWheel(steps);
 
+	const allStepsRefs = {
+		aboutUsSection: stepsRefs[0],
+		whatWeDo: stepsRefs[1],
+		backbone: (node) => (
+			(stepsRefs[2].current = node),
+			(stepsRefs[3].current = node),
+			(stepsRefs[4].current = node),
+			(stepsRefs[5].current = node)
+		),
+		mision: stepsRefs[6],
+		why: (node) => (
+			(stepsRefs[7].current = node),
+			(stepsRefs[8].current = node),
+			(stepsRefs[9].current = node),
+			(stepsRefs[10].current = node),
+			(stepsRefs[11].current = node),
+			(stepsRefs[12].current = node)
+		),
+		different: stepsRefs[13],
+		standFor: (node) => (
+			(stepsRefs[14].current = node),
+			(stepsRefs[15].current = node),
+			(stepsRefs[16].current = node),
+			(stepsRefs[17].current = node)
+		),
+		footer: stepsRefs[18],
+	};
+
 	//theme
 	const { theme, selectTheme } = useTheme();
 	const whiteSections = [1, 2, 3, 4, 5];
@@ -55,54 +83,28 @@ export default function AboutUs() {
 
 	return (
 		<StyledHidenContent onWheel={handleWheel}>
-			<Section theme={theme} ref={stepsRefs[0]}>
+			<Section theme={theme} ref={allStepsRefs.aboutUsSection}>
 				<AboutUsSection />
 			</Section>
-			<Section theme={theme} ref={stepsRefs[1]}>
+			<Section theme={theme} ref={allStepsRefs.whatWeDo}>
 				<WhatWeDo />
 			</Section>
-			<Section
-				theme={theme}
-				ref={(node) => (
-					(stepsRefs[2].current = node),
-					(stepsRefs[3].current = node),
-					(stepsRefs[4].current = node),
-					(stepsRefs[5].current = node)
-				)}
-			>
+			<Section theme={theme} ref={allStepsRefs.backbone}>
 				<Backbone currentStep={currentStep} steps={[2, 3, 4, 5]} />
 			</Section>
-			<Section theme={theme} ref={stepsRefs[6]}>
+			<Section theme={theme} ref={allStepsRefs.mision}>
 				<Mision currentStep={currentStep} />
 			</Section>
-			<Section
-				theme={theme}
-				ref={(node) => (
-					(stepsRefs[7].current = node),
-					(stepsRefs[8].current = node),
-					(stepsRefs[9].current = node),
-					(stepsRefs[10].current = node),
-					(stepsRefs[11].current = node),
-					(stepsRefs[12].current = node)
-				)}
-			>
+			<Section theme={theme} ref={allStepsRefs.why}>
 				<Why currentStep={currentStep} steps={[10, 11, 12]} />
 			</Section>
-			<Section theme={theme} ref={stepsRefs[13]}>
+			<Section theme={theme} ref={allStepsRefs.different}>
 				<Different />
 			</Section>
-			<Section
-				theme={theme}
-				ref={(node) => (
-					(stepsRefs[14].current = node),
-					(stepsRefs[15].current = node),
-					(stepsRefs[16].current = node),
-					(stepsRefs[17].current = node)
-				)}
-			>
+			<Section theme={theme} ref={allStepsRefs.standFor}>
 				<StandFor currentStep={currentStep} steps={[14, 15, 16, 17]} />
 			</Section>
-			<Footer theme={theme} ref={stepsRefs[18]} />
+			<Footer theme={theme} ref={allStepsRefs.footer} />
 		</StyledHidenContent>
 	);
 }
