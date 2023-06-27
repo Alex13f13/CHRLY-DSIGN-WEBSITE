@@ -6,5 +6,6 @@ export const paths = {
 	aboutUs: "/about-us",
 	aboutUsWhatwedo: "/about-us?link=whatwedo",
 	legal: "/legal",
+	cookies: "/cookies",
 	workDetails: "/work-details",
 };

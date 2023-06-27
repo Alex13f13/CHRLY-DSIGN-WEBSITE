@@ -9,6 +9,7 @@ import { THEME } from "../utils/constants";
 import diagonalArrow from "../assets/diagonalArrow.svg";
 import cross from "../assets/cross.svg";
 import hamburgerIcon from "../assets/hamburgerIcon.svg";
+import { useOppositeTheme } from "../utils/useOppositeTheme";
 
 const StyledHeader = styled.div`
 	${({ theme }) => themes[theme]}
@@ -33,7 +34,7 @@ const StyledButtons = styled.div`
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
-	width: 25%;
+	width: 30%;
 `;
 
 const StyledBody = styled.div`
@@ -81,10 +82,6 @@ const StyledFooter = styled.div`
 export default function Header() {
 	const { theme } = useTheme();
 	const [open, setOpen] = useState(false);
-
-	const useOppositeTheme = () => {
-		return theme === THEME.primary ? THEME.secondary : THEME.primary;
-	};
 
 	const handleMenu = () => {
 		setOpen(!open);

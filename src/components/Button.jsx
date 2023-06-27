@@ -6,7 +6,7 @@ const StyledButton = styled.div`
 	${({ theme }) => themes[theme]}
 	font-size: 0.9vw;
 	font-weight: 500;
-	padding: 1.5% 8%;
+	padding: 2% 10%;
 	border: 0.138888889vw solid ${({ theme }) => (theme === THEME.primary ? "#e3e3e3" : "#000000")};
 	border-radius: 50px;
 	cursor: pointer;
