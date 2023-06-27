@@ -7,7 +7,6 @@ import { useEffect, useRef } from "react";
 import { useWheel } from "../../utils/useWheel";
 import { Footer } from "../../components/Footer";
 import { StyledHidenContent } from "../../components/Content";
-import { useSearchParams } from "react-router-dom";
 import Video from "./Video";
 import Intro from "./Intro";
 import Offer from "./Offer";
@@ -16,10 +15,6 @@ import OneHundredPercent from "./OneHundredPercent";
 import Awards from "./Awards";
 
 export default function Landing() {
-	const [searchParams] = useSearchParams();
-	const linkParam = searchParams?.get("link");
-	console.log(linkParam);
-
 	//all steps
 	const steps = [
 		useRef(null), // 0

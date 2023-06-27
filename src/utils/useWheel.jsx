@@ -1,12 +1,22 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState, useRef } from "react";
 import { useElementScroll } from "./useElementScroll";
+import { useSectionStep } from "./useSectionStep";
+import { useLocation } from "react-router-dom";
 
 export const useWheel = (stepsRefs = []) => {
-	const [currentStep, setCurrentStep] = useState(0);
+	const { search } = useLocation();
+	const sectionStep = useSectionStep();
+	const [currentStep, setCurrentStep] = useState(sectionStep);
 	const [isScrollingDown, setIsScrollingDown] = useState(true);
 	const prevScrollTop = useRef(0);
 	const [isContainerScrolling, handleScroll] = useElementScroll();
+
+	useEffect(() => {
+		if (sectionStep !== currentStep) {
+			setCurrentStep(sectionStep);
+		}
+	}, [search]);
 
 	useEffect(() => {
 		scrollToSection();
