@@ -30,7 +30,7 @@ export default function Intro({ currentStep, steps }) {
 				texts={["BRANDING ", "DESIGN", "MOTION", "IDENTIFY", "INTERFACE", "EVOLUTION"]}
 				textStyles={TEXT_TYPE.superTitle}
 				currentStep={currentStep}
-				activeSection={steps.includes(currentStep)}
+				scrollSteps={steps}
 				animSectIn={ANIMATION.fadeIn}
 				animSectOut={ANIMATION.fadeOut}
 				sectionStyles={{

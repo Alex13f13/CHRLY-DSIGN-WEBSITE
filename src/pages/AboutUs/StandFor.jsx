@@ -14,7 +14,7 @@ export default function StandFor({ currentStep, steps }) {
 				texts={["EVOLUTION /", "PERSEVERANCE /", "AMBITION /", "MODESTY /"]}
 				textStyles={TEXT_TYPE.subtitle}
 				currentStep={currentStep}
-				activeSection={steps.includes(currentStep)}
+				scrollSteps={steps}
 				animIn={ANIMATION.fadeIn}
 				animOut={ANIMATION.fadeOut}
 			/>
@@ -27,7 +27,7 @@ export default function StandFor({ currentStep, steps }) {
 				]}
 				textStyles={TEXT_TYPE.description}
 				currentStep={currentStep}
-				activeSection={steps.includes(currentStep)}
+				scrollSteps={steps}
 				animIn={ANIMATION.fadeIn}
 				animOut={ANIMATION.fadeOut}
 			/>

@@ -14,7 +14,7 @@ export default function Backbone({ currentStep, steps }) {
 				texts={["DIGITAL BRANDS", "MOTION", "PREMIUM DESIGN", "INNER SOUL"]}
 				textStyles={TEXT_TYPE.title}
 				currentStep={currentStep}
-				activeSection={steps.includes(currentStep)}
+				scrollSteps={steps}
 				animIn={ANIMATION.none}
 				animOut={ANIMATION.none}
 			/>
@@ -27,7 +27,7 @@ export default function Backbone({ currentStep, steps }) {
 				]}
 				textStyles={TEXT_TYPE.description}
 				currentStep={currentStep}
-				activeSection={steps.includes(currentStep)}
+				scrollSteps={steps}
 				animIn={ANIMATION.fadeIn}
 				animOut={ANIMATION.fadeOut}
 			/>
@@ -40,7 +40,7 @@ export default function Backbone({ currentStep, steps }) {
 				]}
 				textStyles={TEXT_TYPE.description}
 				currentStep={currentStep}
-				activeSection={steps.includes(currentStep)}
+				scrollSteps={steps}
 				animIn={ANIMATION.fadeIn}
 				animOut={ANIMATION.fadeOut}
 			/>

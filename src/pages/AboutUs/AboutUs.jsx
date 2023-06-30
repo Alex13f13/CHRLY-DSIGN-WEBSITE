@@ -7,7 +7,6 @@ import { useEffect, useRef } from "react";
 import { Footer } from "../../components/Footer";
 import { useWheel } from "../../utils/useWheel";
 import { StyledHidenContent } from "../../components/Content";
-import { useSearchParams } from "react-router-dom";
 import AboutUsSection from "./AboutUsSection";
 import WhatWeDo from "./WhatWeDo";
 import Backbone from "./Backbone";
@@ -17,12 +16,8 @@ import Different from "./Different";
 import StandFor from "./StandFor";
 
 export default function AboutUs() {
-	const [searchParams] = useSearchParams();
-	const linkParam = searchParams?.get("link");
-	console.log(linkParam);
-
+	// All steps
 	const steps = Array.from({ length: 19 }).map(() => useRef(null));
-
 	const { handleWheel, stepsRefs, currentStep } = useWheel(steps);
 
 	const allStepsRefs = {

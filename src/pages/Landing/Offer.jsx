@@ -13,7 +13,7 @@ export default function Offer({ currentStep, steps }) {
 				texts={["EVOLUTI", "ON"]}
 				textStyles={TEXT_TYPE.superTitle}
 				currentStep={currentStep}
-				activeSection={steps.includes(currentStep)}
+				scrollSteps={steps}
 				animSectIn={ANIMATION.fadeIn}
 				animSectOut={ANIMATION.fadeOut}
 				sectionStyles={{

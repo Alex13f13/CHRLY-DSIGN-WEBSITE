@@ -34,7 +34,7 @@ export default function Why({ currentStep, steps }) {
 				]}
 				textStyles={TEXT_TYPE.description}
 				currentStep={currentStep}
-				activeSection={steps.includes(currentStep)}
+				scrollSteps={steps}
 				animIn={ANIMATION.fadeIn}
 				animOut={ANIMATION.fadeOut}
 			/>

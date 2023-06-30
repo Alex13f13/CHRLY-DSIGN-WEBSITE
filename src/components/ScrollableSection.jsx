@@ -29,23 +29,30 @@ export const ScrollableSection = ({
 	animSectIn = ANIMATION.default,
 	animSectOut = ANIMATION.default,
 	textStyles = TEXT_TYPE.description,
-	activeSection = false,
 	currentStep = 0,
+	scrollSteps = [],
 	children,
 }) => {
 	const { theme } = useTheme();
 	const [sliceActive, setSliceActive] = useState(-1);
-	const [beforeCurrentStep, setBeforeCurrentStep] = useState(0);
+	const [beforeCurrentStep, setBeforeCurrentStep] = useState(currentStep);
 
 	const sliceRefs = useRef([]);
 	sliceRefs.current = texts.map((_, i) => sliceRefs.current[i] ?? createRef());
 
 	useEffect(() => {
-		if (!activeSection) {
-			if (beforeCurrentStep > currentStep) setSliceActive(-1);
+		if (currentStep >= scrollSteps[scrollSteps.length - 1]) {
+			setSliceActive(texts.length);
+		}
+	}, []);
+
+	useEffect(() => {
+		if (!scrollSteps.includes(currentStep)) {
+			if (beforeCurrentStep > currentStep && sliceActive !== texts.length) {
+				setSliceActive(-1);
+			}
 			return;
 		}
-
 		let index;
 
 		if (beforeCurrentStep > currentStep) {
@@ -79,7 +86,7 @@ export const ScrollableSection = ({
 	return (
 		<StyledSection
 			sectionStyles={sectionStyles}
-			activeSection={activeSection}
+			activeSection={scrollSteps.includes(currentStep)}
 			animSectIn={animSectIn}
 			animSectOut={animSectOut}
 		>
