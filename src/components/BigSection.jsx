@@ -5,7 +5,6 @@ import { forwardRef } from "react";
 
 const StyledBigSection = styled.section`
 	${({ theme }) => themes[theme]}
-	height: 290vh;
 	::-webkit-scrollbar {
 		display: none;
 	}

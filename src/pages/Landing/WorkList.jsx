@@ -12,6 +12,26 @@ const StyledWorkBar = styled.div`
 	align-items: center;
 `;
 
+const Card = styled.div`
+	height: 300px;
+	width: 200px;
+	background-color: #e7e7e7;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #000000;
+	font-size: 24px;
+	border-radius: 10px;
+`;
+
+const CardWrapper = styled.div`
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 18px;
+	padding: 10%;
+	justify-items: center;
+`;
+
 export default function WorkList() {
 	return (
 		<StyledWork>
@@ -49,16 +69,20 @@ export default function WorkList() {
 				-----------------------------------------------------------------------------------------------------------------------------------------
 				FEATURED WORK
 			</StyledWorkBar>
-			{/* <TextSlice
-						textExtraStyles={{
-							display: "flex",
-							alignItems: "center",
-							justifyContent: "center",
-						}}
-						textStyles={TEXT_TYPE.title}
-					>
-						Work List Component
-					</TextSlice> */}
+			<CardWrapper>
+				<Card>Card 1</Card>
+				<Card>Card 2</Card>
+				<Card>Card 3</Card>
+				<Card>Card 4</Card>
+				<Card>Card 5</Card>
+				<Card>Card 6</Card>
+				<Card>Card 7</Card>
+				<Card>Card 8</Card>
+				<Card>Card 9</Card>
+				<Card>Card 10</Card>
+				<Card>Card 11</Card>
+				<Card>Card 12</Card>
+			</CardWrapper>
 		</StyledWork>
 	);
 }
