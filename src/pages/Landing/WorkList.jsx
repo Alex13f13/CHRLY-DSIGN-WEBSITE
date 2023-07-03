@@ -45,7 +45,7 @@ export default function WorkList() {
 					alignItems: "center",
 					justifyContent: "center",
 				}}
-				textStyles={TEXT_TYPE.superTitle}
+				textStyles={TEXT_TYPE.h1Main}
 			>
 				Work
 			</TextSlice>
@@ -59,7 +59,7 @@ export default function WorkList() {
 					alignItems: "center",
 					justifyContent: "center",
 				}}
-				textStyles={TEXT_TYPE.subtitle}
+				textStyles={TEXT_TYPE.mainText}
 			>
 				Brands are more than just strategy and design. They are living organisms that inspire. To
 				provide the highest-end results, we use cutting-edge techniques and tailored processes that

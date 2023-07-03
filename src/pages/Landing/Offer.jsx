@@ -11,7 +11,7 @@ export default function Offer({ currentStep, steps }) {
 		<StyledOffer>
 			<ScrollableSection
 				texts={["EVOLUTI", "ON"]}
-				textStyles={TEXT_TYPE.superTitle}
+				textStyles={TEXT_TYPE.h1Main}
 				currentStep={currentStep}
 				scrollSteps={steps}
 				animSectIn={ANIMATION.fadeIn}
@@ -34,7 +34,7 @@ export default function Offer({ currentStep, steps }) {
 					alignItems: "center",
 					justifyContent: "center",
 				}}
-				textStyles={TEXT_TYPE.subtitle}
+				textStyles={TEXT_TYPE.mainText}
 			>
 				Digital Brands are the future in the now. Why then use the same approach of the last 80
 				years? By understanding their true nature, we provide the ultimate digital brand push that

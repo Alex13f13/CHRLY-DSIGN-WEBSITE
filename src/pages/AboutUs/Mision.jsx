@@ -8,8 +8,8 @@ const StyledMision = styled.div``;
 export default function Mision({ currentStep }) {
 	return (
 		<StyledMision>
-			<TextSlice textStyles={TEXT_TYPE.title}>Mision</TextSlice>
-			<TextSlice textStyles={TEXT_TYPE.description} sliceActive={currentStep === 6}>
+			<TextSlice textStyles={TEXT_TYPE.h5Main}>Mision</TextSlice>
+			<TextSlice textStyles={TEXT_TYPE.paragraph} sliceActive={currentStep === 6}>
 				Our mission is to help Digital Brands step up, evolving till they become the ultimate
 				version of themselves and achieve the results they always dreamed of.
 			</TextSlice>

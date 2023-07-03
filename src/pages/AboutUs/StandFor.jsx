@@ -9,10 +9,10 @@ const StyledStandFor = styled.div``;
 export default function StandFor({ currentStep, steps }) {
 	return (
 		<StyledStandFor>
-			<TextSlice textStyles={TEXT_TYPE.title}>WE STAND FOR</TextSlice>
+			<TextSlice textStyles={TEXT_TYPE.h5Main}>WE STAND FOR</TextSlice>
 			<ScrollableSection
 				texts={["EVOLUTION /", "PERSEVERANCE /", "AMBITION /", "MODESTY /"]}
-				textStyles={TEXT_TYPE.subtitle}
+				textStyles={TEXT_TYPE.mainText}
 				currentStep={currentStep}
 				scrollSteps={steps}
 				animIn={ANIMATION.fadeIn}
@@ -25,7 +25,7 @@ export default function StandFor({ currentStep, steps }) {
 					"Dream big or do not dream at all. Go big or go home.",
 					"Only focus on helping and doing good for people. No hidden intentions.",
 				]}
-				textStyles={TEXT_TYPE.description}
+				textStyles={TEXT_TYPE.paragraph}
 				currentStep={currentStep}
 				scrollSteps={steps}
 				animIn={ANIMATION.fadeIn}

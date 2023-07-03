@@ -13,8 +13,17 @@ export const ANIMATION = {
 };
 
 export const TEXT_TYPE = {
-  superTitle: "superTitle",
-	title: "title",
-	subtitle: "subTitle",
-	description: "description",
+  h1Main: "h1Main",
+  h1Bold: "h1Bold",
+  h1Medium: "h1Medium",
+  h1Reduced: "h1Reduced",
+  h2Main: "h2Main",
+  h2Gray: "h2Gray",
+  h3Main: "h3Main",
+  h4Main: "h4Main",
+  h5Main: "h5Main",
+  h6Main: "h6Main",
+  mainText: "mainText",
+  mainTitles: "mainTitles",
+  paragraph: "paragraph",
 };

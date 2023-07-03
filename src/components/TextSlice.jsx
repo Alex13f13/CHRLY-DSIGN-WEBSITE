@@ -19,7 +19,7 @@ const TextSliceBase = (
 	{
 		animIn = ANIMATION.default,
 		animOut = ANIMATION.default,
-		textStyles = TEXT_TYPE.description,
+		textStyles = TEXT_TYPE.paragraph,
 		sliceActive = true,
 		textExtraStyles = css``,
 		theme,

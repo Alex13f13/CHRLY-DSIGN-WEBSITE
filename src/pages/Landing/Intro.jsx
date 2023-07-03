@@ -13,7 +13,7 @@ export default function Intro({ currentStep, steps }) {
 	return (
 		<StyledIntro>
 			<TextSlice
-				textStyles={TEXT_TYPE.subtitle}
+				textStyles={TEXT_TYPE.mainText}
 				textExtraStyles={{
 					height: "40%",
 					marginLeft: "10%",
@@ -28,7 +28,7 @@ export default function Intro({ currentStep, steps }) {
 			</TextSlice>
 			<ScrollableSection
 				texts={["BRANDING ", "DESIGN", "MOTION", "IDENTIFY", "INTERFACE", "EVOLUTION"]}
-				textStyles={TEXT_TYPE.superTitle}
+				textStyles={TEXT_TYPE.h1Bold}
 				currentStep={currentStep}
 				scrollSteps={steps}
 				animSectIn={ANIMATION.fadeIn}

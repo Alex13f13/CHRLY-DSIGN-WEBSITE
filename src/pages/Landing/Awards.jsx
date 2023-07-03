@@ -47,7 +47,7 @@ export default function Awards() {
 					textExtraStyles={{
 						fontSize: "3vw",
 					}}
-					textStyles={TEXT_TYPE.title}
+					textStyles={TEXT_TYPE.h5Main}
 				>
 					Awards
 				</TextSlice>
@@ -57,7 +57,7 @@ export default function Awards() {
 						marginTop: "6%",
 						fontWeight: 300,
 					}}
-					textStyles={TEXT_TYPE.subtitle}
+					textStyles={TEXT_TYPE.mainText}
 				>
 					Despite being a new agency, our innovative vision & approach are skyrocketing within the
 					industry.
@@ -65,8 +65,8 @@ export default function Awards() {
 			</StyledAwardDescription>
 			<StyledAwardsContainer>
 				<StyledAwardYears>
-					<TextSlice textStyles={TEXT_TYPE.subtitle}>AWARD Component</TextSlice>
-					<TextSlice textStyles={TEXT_TYPE.subtitle}>AWARD Component</TextSlice>
+					<TextSlice textStyles={TEXT_TYPE.mainText}>AWARD Component</TextSlice>
+					<TextSlice textStyles={TEXT_TYPE.mainText}>AWARD Component</TextSlice>
 				</StyledAwardYears>
 				<StyledAwardExtra>
 					<a href="#">+ Other mentions and awards</a>

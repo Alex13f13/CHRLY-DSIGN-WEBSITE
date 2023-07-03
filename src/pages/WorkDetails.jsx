@@ -30,7 +30,7 @@ export default function WorkDetails() {
 	return (
 		<StyledWork theme={theme}>
 			<StyleContainer>
-				<TextSlice textStyles={TEXT_TYPE.title}>Work in progress</TextSlice>
+				<TextSlice textStyles={TEXT_TYPE.h5Main}>Work in progress</TextSlice>
 			</StyleContainer>
 			<Footer theme={theme} />
 		</StyledWork>

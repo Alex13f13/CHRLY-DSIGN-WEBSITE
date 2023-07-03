@@ -13,7 +13,7 @@ const StyledOneHundredPercent = styled.div`
 export default function OneHundredPercent() {
 	return (
 		<StyledOneHundredPercent>
-			<TextSlice textStyles={TEXT_TYPE.title}>Evolve your brand to its 0% a 100%</TextSlice>
+			<TextSlice textStyles={TEXT_TYPE.h5Main}>Evolve your brand to its 0% a 100%</TextSlice>
 			<TextSlice
 				textExtraStyles={{
 					height: "40%",
@@ -25,7 +25,7 @@ export default function OneHundredPercent() {
 					justifyContent: "center",
 					fontWeight: 300,
 				}}
-				textStyles={TEXT_TYPE.subtitle}
+				textStyles={TEXT_TYPE.mainText}
 			>
 				We take really few projects at a time, guaranteeing that we can deeply immerse on your
 				brand’s current situation and provide high-end solutions to its needs. If you’re not opposed

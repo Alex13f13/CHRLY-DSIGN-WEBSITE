@@ -9,10 +9,10 @@ const StyledBackbone = styled.div``;
 export default function Backbone({ currentStep, steps }) {
 	return (
 		<StyledBackbone>
-			<TextSlice textStyles={TEXT_TYPE.title}>Backbone concepts</TextSlice>
+			<TextSlice textStyles={TEXT_TYPE.h5Main}>Backbone concepts</TextSlice>
 			<ScrollableSection
 				texts={["DIGITAL BRANDS", "MOTION", "PREMIUM DESIGN", "INNER SOUL"]}
-				textStyles={TEXT_TYPE.title}
+				textStyles={TEXT_TYPE.h5Main}
 				currentStep={currentStep}
 				scrollSteps={steps}
 				animIn={ANIMATION.none}
@@ -25,7 +25,7 @@ export default function Backbone({ currentStep, steps }) {
 					"Backbone concept 3 / 4",
 					"Backbone concept 4 / 4",
 				]}
-				textStyles={TEXT_TYPE.description}
+				textStyles={TEXT_TYPE.paragraph}
 				currentStep={currentStep}
 				scrollSteps={steps}
 				animIn={ANIMATION.fadeIn}
@@ -38,7 +38,7 @@ export default function Backbone({ currentStep, steps }) {
 					"They say good design is invisible... We say good design is something you can’t live without once you experience it. There’s nothing like falling in love with a brand every time you see her. To provide the highest-end creative and visually attractive results, we don’t design “for” digital environments but “from” digital environments.",
 					"Every brand has a story that begins with passion, keeps the light on in the darkest moments and gives the drive to chase those impossible dreams. An inspiring story hidden in the dark waiting for the right way to shine through. We wanna help you tell that story and become part of people's lives.",
 				]}
-				textStyles={TEXT_TYPE.description}
+				textStyles={TEXT_TYPE.paragraph}
 				currentStep={currentStep}
 				scrollSteps={steps}
 				animIn={ANIMATION.fadeIn}

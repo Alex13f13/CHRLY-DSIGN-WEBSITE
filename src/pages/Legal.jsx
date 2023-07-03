@@ -59,12 +59,12 @@ export default function Legal() {
 		<StyledLegal theme={theme}>
 			<StyleContainer>
 				<StyledTitle>
-					<TextSlice textStyles={TEXT_TYPE.title}>Privacy Policy</TextSlice>
+					<TextSlice textStyles={TEXT_TYPE.h5Main}>Privacy Policy</TextSlice>
 				</StyledTitle>
 				<StyledInfoContainer>
 					<StyledInfo>
-						<TextSlice textStyles={TEXT_TYPE.subtitle}>Last updated: 17 March 2023</TextSlice>
-						<TextSlice textStyles={TEXT_TYPE.description}>
+						<TextSlice textStyles={TEXT_TYPE.mainText}>Last updated: 17 March 2023</TextSlice>
+						<TextSlice textStyles={TEXT_TYPE.paragraph}>
 							Our website values your privacy and wants to ensure that you understand what
 							information we collect and how we use it. This Privacy Policy explains the types of
 							personal information we collect, how we use it, and how we protect it. By using our
@@ -72,8 +72,8 @@ export default function Legal() {
 						</TextSlice>
 					</StyledInfo>
 					<StyledInfo>
-						<TextSlice textStyles={TEXT_TYPE.subtitle}>Collection and Use</TextSlice>
-						<TextSlice textStyles={TEXT_TYPE.description}>
+						<TextSlice textStyles={TEXT_TYPE.mainText}>Collection and Use</TextSlice>
+						<TextSlice textStyles={TEXT_TYPE.paragraph}>
 							When you use our website, we may collect certain information about you, including your
 							name, email address, and other contact information. We may also collect information
 							about your browsing behavior, including the pages you view, the links you click, and
@@ -84,8 +84,8 @@ export default function Legal() {
 						</TextSlice>
 					</StyledInfo>
 					<StyledInfo>
-						<TextSlice textStyles={TEXT_TYPE.subtitle}>Sharing and Disclosure</TextSlice>
-						<TextSlice textStyles={TEXT_TYPE.description}>
+						<TextSlice textStyles={TEXT_TYPE.mainText}>Sharing and Disclosure</TextSlice>
+						<TextSlice textStyles={TEXT_TYPE.paragraph}>
 							We do not sell, rent, or otherwise share your personal information with third parties,
 							except as necessary to provide our services or as required by law. We may share your
 							information with our trusted partners or service providers, such as email marketing
@@ -94,8 +94,8 @@ export default function Legal() {
 						</TextSlice>
 					</StyledInfo>
 					<StyledInfo>
-						<TextSlice textStyles={TEXT_TYPE.subtitle}>Security</TextSlice>
-						<TextSlice textStyles={TEXT_TYPE.description}>
+						<TextSlice textStyles={TEXT_TYPE.mainText}>Security</TextSlice>
+						<TextSlice textStyles={TEXT_TYPE.paragraph}>
 							We take appropriate measures to protect the security of your personal information. We
 							use industry-standard encryption technologies to protect your data during transmission
 							and storage. However, no method of transmission over the Internet or electronic
@@ -104,8 +104,8 @@ export default function Legal() {
 						</TextSlice>
 					</StyledInfo>
 					<StyledInfo>
-						<TextSlice textStyles={TEXT_TYPE.subtitle}>Changes to this Privacy Policy</TextSlice>
-						<TextSlice textStyles={TEXT_TYPE.description}>
+						<TextSlice textStyles={TEXT_TYPE.mainText}>Changes to this Privacy Policy</TextSlice>
+						<TextSlice textStyles={TEXT_TYPE.paragraph}>
 							We reserve the right to modify or update this Privacy Policy at any time. We will
 							notify you of any changes by posting the revised policy on our website. Your continued
 							use of our website after any changes to this Privacy Policy indicates your acceptance
@@ -113,8 +113,8 @@ export default function Legal() {
 						</TextSlice>
 					</StyledInfo>
 					<StyledInfo>
-						<TextSlice textStyles={TEXT_TYPE.subtitle}>Contact Us</TextSlice>
-						<TextSlice textStyles={TEXT_TYPE.description}>
+						<TextSlice textStyles={TEXT_TYPE.mainText}>Contact Us</TextSlice>
+						<TextSlice textStyles={TEXT_TYPE.paragraph}>
 							If you have any questions about our Privacy Policy or how we handle your personal
 							information, please contact us at hello@chrlydsign.com.
 						</TextSlice>

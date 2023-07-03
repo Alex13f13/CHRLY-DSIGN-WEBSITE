@@ -59,12 +59,12 @@ export default function Cookies() {
 		<StyledCookies theme={theme}>
 			<StyleContainer>
 				<StyledTitle>
-					<TextSlice textStyles={TEXT_TYPE.title}>Cookies Policy</TextSlice>
+					<TextSlice textStyles={TEXT_TYPE.h5Main}>Cookies Policy</TextSlice>
 				</StyledTitle>
 				<StyledInfoContainer>
 					<StyledInfo>
-						<TextSlice textStyles={TEXT_TYPE.subtitle}>Last updated: 17 March 2023</TextSlice>
-						<TextSlice textStyles={TEXT_TYPE.description}>
+						<TextSlice textStyles={TEXT_TYPE.mainText}>Last updated: 17 March 2023</TextSlice>
+						<TextSlice textStyles={TEXT_TYPE.paragraph}>
 							CHRLY DSIGN® uses cookies on www.chrlydsign.com. By using the website, you consent to
 							the use of cookies. Our Cookies Policy explains what cookies are, how we use cookies,
 							how third-parties we may partner with may use cookies on the website, your choices
@@ -72,8 +72,8 @@ export default function Cookies() {
 						</TextSlice>
 					</StyledInfo>
 					<StyledInfo>
-						<TextSlice textStyles={TEXT_TYPE.subtitle}>What are cookies</TextSlice>
-						<TextSlice textStyles={TEXT_TYPE.description}>
+						<TextSlice textStyles={TEXT_TYPE.mainText}>What are cookies</TextSlice>
+						<TextSlice textStyles={TEXT_TYPE.paragraph}>
 							Cookies are small pieces of text sent by your web browser by a website you visit. A
 							cookie file is stored in your web browser and allows the Service or a third-party to
 							recognize you and make your next visit easier and the Service more useful to you.
@@ -83,8 +83,8 @@ export default function Cookies() {
 						</TextSlice>
 					</StyledInfo>
 					<StyledInfo>
-						<TextSlice textStyles={TEXT_TYPE.subtitle}>How we use cookies</TextSlice>
-						<TextSlice textStyles={TEXT_TYPE.description}>
+						<TextSlice textStyles={TEXT_TYPE.mainText}>How we use cookies</TextSlice>
+						<TextSlice textStyles={TEXT_TYPE.paragraph}>
 							When you use and access the Service, we may place a number of cookies files in your
 							web browser. We use cookies for the following purposes: · To enable certain functions
 							of the Service · To provide analytics · To store your preferences · To enable
@@ -97,18 +97,18 @@ export default function Cookies() {
 						</TextSlice>
 					</StyledInfo>
 					<StyledInfo>
-						<TextSlice textStyles={TEXT_TYPE.subtitle}>Third-Party Cookies</TextSlice>
-						<TextSlice textStyles={TEXT_TYPE.description}>
+						<TextSlice textStyles={TEXT_TYPE.mainText}>Third-Party Cookies</TextSlice>
+						<TextSlice textStyles={TEXT_TYPE.paragraph}>
 							In addition to our own cookies, we may also use various third-parties cookies to
 							report usage statistics of the Service, deliver advertisements on and through the
 							Service, and so on.
 						</TextSlice>
 					</StyledInfo>
 					<StyledInfo>
-						<TextSlice textStyles={TEXT_TYPE.subtitle}>
+						<TextSlice textStyles={TEXT_TYPE.mainText}>
 							What are your choices regarding cookies
 						</TextSlice>
-						<TextSlice textStyles={TEXT_TYPE.description}>
+						<TextSlice textStyles={TEXT_TYPE.paragraph}>
 							If you'd like to delete cookies or instruct your web browser to delete or refuse
 							cookies, please visit the help pages of your web browser. Please note, however, that
 							if you delete cookies or refuse to accept them, you might not be able to use all of

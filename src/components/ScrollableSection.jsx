@@ -28,7 +28,7 @@ export const ScrollableSection = ({
 	animOut = ANIMATION.default,
 	animSectIn = ANIMATION.default,
 	animSectOut = ANIMATION.default,
-	textStyles = TEXT_TYPE.description,
+	textStyles = TEXT_TYPE.paragraph,
 	currentStep = 0,
 	scrollSteps = [],
 	children,
