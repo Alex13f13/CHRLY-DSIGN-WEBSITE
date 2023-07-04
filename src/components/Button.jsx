@@ -1,41 +1,54 @@
+/* eslint-disable react/prop-types */
 import styled from "styled-components";
 import { themes } from "../styles/themes";
 import { THEME } from "../utils/constants";
 import { colors } from "../styles/colors";
 
+const StyledButtonIcon = styled.div`
+	width: 1.04vw;
+	height: 1.07vh;
+	margin-left: 0.69vw;
+	background-color: ${({ theme }) => (theme === THEME.primary ? colors.white : colors.black)};
+	mask: ${({ icon }) => `url(${icon}) no-repeat center / contain`};
+	transition: background-color 0.3s ease;
+`;
+
 const StyledButton = styled.div`
 	${({ theme }) => themes[theme]}
-	font-size: 0.9vw;
-	font-weight: 500;
-	padding: 2% 10%;
-	border: 0.138888889vw solid
-		${({ theme }) => (theme === THEME.primary ? colors.white : colors.black)};
+	font-size: 0.81vw;
+	font-weight: 300;
+	padding: 0.89vh
+		${({ icon, buttonType }) => (icon ? (buttonType === 1 ? "0.93vw" : "1.39vw") : "1.45vw")} 0.89vh
+		1.45vw;
+	border: 1px solid ${({ theme }) => (theme === THEME.primary ? colors.white : colors.black)};
 	border-radius: 50px;
 	cursor: pointer;
-	transition: background-color 0.3s ease;
 	display: flex;
 	align-items: center;
+	transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
 
 	&:hover {
-		background-color: ${({ theme }) =>
-			theme === THEME.primary ? colors.darkGray : colors.lightGray};
+		background-color: ${({ theme }) => (theme === THEME.primary ? colors.white : colors.black)};
+		color: ${({ theme }) => (theme === THEME.primary ? colors.black : colors.white)};
+		border: 1px solid ${({ theme }) => (theme === THEME.primary ? colors.black : colors.white)};
+	}
+
+	&:hover ${StyledButtonIcon} {
+		background-color: ${({ theme }) => (theme === THEME.primary ? colors.black : colors.white)};
 	}
 `;
 
-const StyledButtonIcon = styled.div`
-	width: 1.38888889vw;
-	height: 1.38888889vw;
-	margin-left: 0.69444444vw;
-	background-color: ${({ theme }) => (theme === THEME.primary ? colors.white : colors.black)};
-	mask: ${({ icon }) => `url(${icon}) no-repeat center / contain`};
-`;
-
-// eslint-disable-next-line react/prop-types
-export const Button = ({ onClick = () => {}, theme = THEME.primary, text = "", icon = null }) => {
+export const Button = ({
+	onClick = () => {},
+	theme = THEME.primary,
+	text = "",
+	icon = null,
+	buttonType = 1,
+}) => {
 	return (
-		<StyledButton onClick={onClick} theme={theme}>
+		<StyledButton onClick={onClick} theme={theme} icon={icon} buttonType={buttonType}>
 			{text}
-			{icon && <StyledButtonIcon theme={theme} icon={icon} />}
+			{icon && <StyledButtonIcon theme={theme} icon={icon} buttonType={buttonType} />}
 		</StyledButton>
 	);
 };

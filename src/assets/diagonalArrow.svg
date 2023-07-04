@@ -1,9 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>CDW · Arrow Diagonal · ICON</title>
-    <g id="CDW-·-Arrow-Diagonal-·-ICON" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect id="Rectangle-Copy" fill="#E3E3E3" transform="translate(15, 7) rotate(-270) translate(-15, -7)" x="8" y="6" width="14" height="2"></rect>
-        <rect id="Rectangle-Copy" fill="#E3E3E3" transform="translate(9, 1) rotate(-180) translate(-9, -1)" x="2" y="4.26325641e-14" width="14" height="2"></rect>
-        <rect id="Rectangle-Copy-2" fill="#E3E3E3" transform="translate(7,8787, 8,1213) rotate(-225) translate(-7,8787, -8,1213)" x="-2.12132034" y="7.12132034" width="20" height="2"></rect>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#E3E3E3;}
+</style>
+<rect id="Rectangle-Copy" x="14" class="st0" width="2" height="14"/>
+<rect id="Rectangle-Copy_00000024712551407116330700000018099904707252759168_" x="2" class="st0" width="14" height="2"/>
+<rect id="Rectangle-Copy-2" x="-2.1" y="7.1" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.435 7.9497)" class="st0" width="20" height="2"/>
 </svg>

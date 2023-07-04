@@ -107,6 +107,7 @@ export default function Header() {
 						onClick={sendEmail}
 						text="LET’S TALK"
 						icon={diagonalArrow}
+						buttonType={2}
 					/>
 					{open ? (
 						<Button theme={theme} onClick={handleMenu} text="CLOSE" icon={cross} />
