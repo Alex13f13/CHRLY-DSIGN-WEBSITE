@@ -10,7 +10,7 @@ const StyledButtonIcon = styled.div`
 	margin-left: 0.69vw;
 	background-color: ${({ theme }) => (theme === THEME.primary ? colors.white : colors.black)};
 	mask: ${({ icon }) => `url(${icon}) no-repeat center / contain`};
-	transition: background-color 0.3s ease;
+	transition: background-color 0.5s ease;
 `;
 
 const StyledButton = styled.div`
@@ -25,16 +25,16 @@ const StyledButton = styled.div`
 	cursor: pointer;
 	display: flex;
 	align-items: center;
-	transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+	transition: background-color 0.5s ease, color 0.5s ease, border 0.5s ease;
 
 	&:hover {
 		background-color: ${({ theme }) => (theme === THEME.primary ? colors.white : colors.black)};
 		color: ${({ theme }) => (theme === THEME.primary ? colors.black : colors.white)};
 		border: 1px solid ${({ theme }) => (theme === THEME.primary ? colors.black : colors.white)};
-	}
 
-	&:hover ${StyledButtonIcon} {
-		background-color: ${({ theme }) => (theme === THEME.primary ? colors.black : colors.white)};
+		${StyledButtonIcon} {
+			background-color: ${({ theme }) => (theme === THEME.primary ? colors.black : colors.white)};
+		}
 	}
 `;
 
