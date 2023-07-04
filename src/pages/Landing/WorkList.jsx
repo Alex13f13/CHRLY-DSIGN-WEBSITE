@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { TEXT_TYPE } from "../../utils/constants";
 import { TextSlice } from "../../components/TextSlice";
+import { colors } from "../../styles/colors";
 
 const StyledWork = styled.div``;
 
@@ -15,11 +16,11 @@ const StyledWorkBar = styled.div`
 const Card = styled.div`
 	height: 300px;
 	width: 200px;
-	background-color: #e7e7e7;
+	background-color: ${colors.white};
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: #000000;
+	color: ${colors.black};
 	font-size: 24px;
 	border-radius: 10px;
 `;

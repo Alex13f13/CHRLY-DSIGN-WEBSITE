@@ -4,6 +4,7 @@ import { THEME } from "../utils/constants";
 import { forwardRef } from "react";
 import { Link } from "react-router-dom";
 import { paths } from "../router/paths";
+import { colors } from "../styles/colors";
 
 const StyledFooter = styled.section`
 	${({ theme }) => themes[theme]}
@@ -80,7 +81,7 @@ const StyledMail = styled.div`
 const StyledCopiright = styled.div`
 	grid-area: copiright;
 	${gridCenteringStyles}
-	color: #77788C;
+	color: ${colors.lightGray};
 	padding: 0 25%;
 	justify-content: flex-start;
 	p {
@@ -92,7 +93,7 @@ const StyledSocial = styled.div`
 	grid-area: social;
 	${gridCenteringStyles}
 	justify-content: space-between;
-	color: #77788c;
+	color: ${colors.lightGray};
 	padding: 0 20% 0 9%;
 	p {
 		font-size: 0.8vw;

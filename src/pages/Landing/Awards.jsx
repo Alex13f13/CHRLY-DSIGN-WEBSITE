@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { TextSlice } from "../../components/TextSlice";
 import { TEXT_TYPE } from "../../utils/constants";
+import { colors } from "../../styles/colors";
 
 const StyledAwards = styled.div`
 	height: 100%;
@@ -34,7 +35,7 @@ const StyledAwardExtra = styled.div`
 	padding-top: 3%;
 
 	a {
-		color: #e3e3e3;
+		color: ${colors.white};
 		text-decoration: none;
 	}
 `;

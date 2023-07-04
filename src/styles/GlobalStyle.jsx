@@ -1,7 +1,12 @@
 import { createGlobalStyle } from "styled-components";
+import arrow from "../assets/arrow.svg";
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.cdnfonts.com/css/gelion');
+
+  *, *::before, *::after {
+    cursor: url(${arrow}), auto;
+  }
 
   body {
     margin: 0;

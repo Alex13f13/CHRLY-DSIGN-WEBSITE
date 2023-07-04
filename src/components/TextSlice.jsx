@@ -6,11 +6,12 @@ import { animations } from "../styles/animations";
 import { textTypes } from "../styles/textTypes";
 import { ANIMATION, TEXT_TYPE } from "../utils/constants";
 import { forwardRef } from "react";
+import { colors } from "../styles/colors";
 
 const StyledTextSlice = styled.div`
 	${(props) => textTypes[props?.textStyles]}
-	${(props) =>
-		props?.sliceActive ? "" : props?.theme === THEME.primary ? "color: #202024" : "color: #E3E3E3"};
+	color: ${(props) =>
+		props?.sliceActive ? "" : props?.theme === THEME.primary ? colors.darkGray : colors.lightGray};
 	${(props) => (props?.sliceActive ? animations[props?.animIn] : animations[props?.animOut])}
 	${(props) => props?.textExtraStyles}
 `;

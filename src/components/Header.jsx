@@ -10,6 +10,7 @@ import diagonalArrow from "../assets/diagonalArrow.svg";
 import cross from "../assets/cross.svg";
 import hamburgerIcon from "../assets/hamburgerIcon.svg";
 import { useOppositeTheme } from "../utils/useOppositeTheme";
+import { colors } from "../styles/colors";
 
 const StyledHeader = styled.div`
 	${({ theme }) => themes[theme]}
@@ -55,7 +56,7 @@ const StyledLinkContainer = styled.div`
 
 const StyledLink = styled(Link)`
 	text-decoration: none;
-	color: ${({ theme }) => (theme === THEME.primary ? "#e3e3e3" : "#000000")};
+	color: ${({ theme }) => (theme === THEME.primary ? colors.white : colors.black)};
 	font-size: 1.6667vw;
 	margin-bottom: 0.6944vw;
 	cursor: pointer;
@@ -70,7 +71,7 @@ const StyledFooter = styled.div`
 	p {
 		font-size: 0.9722vw;
 		margin-right: 1.3889vw;
-		color: ${({ theme }) => (theme === THEME.primary ? "#77788C" : "#E3E3E3")};
+		color: ${({ theme }) => (theme === THEME.primary ? colors.darkGray : colors.lightGray)};
 
 		&:hover {
 			cursor: pointer;

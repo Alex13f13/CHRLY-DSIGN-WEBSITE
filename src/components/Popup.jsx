@@ -8,10 +8,12 @@ import { useOppositeTheme } from "../utils/useOppositeTheme";
 import { THEME } from "../utils/constants";
 import { paths } from "../router/paths";
 import { useNavigate } from "react-router-dom";
+import { colors } from "../styles/colors";
 
 const PopupWrapper = styled.div`
 	${({ theme }) => themes[theme]}
-	border: 0.138888889vw solid ${({ theme }) => (theme === THEME.primary ? "#e3e3e3" : "#000000")};
+	border: 0.138888889vw solid ${({ theme }) =>
+		theme === THEME.primary ? colors.white : colors.black};
 	border-radius: 50px;
 	position: fixed;
 	bottom: 6vh;

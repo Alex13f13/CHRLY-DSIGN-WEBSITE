@@ -1,12 +1,13 @@
 import { css } from 'styled-components';
+import { colors } from './colors';
 
 export const themes = {
 	primary: css`
-		background-color: #000000;
-		color: #e3e3e3;
+		background-color: ${colors.black};
+		color: ${colors.white};
 	`,
 	secondary: css`
-		background-color: #ffffff;
-		color: #000000;
+		background-color: ${colors.white};
+		color: ${colors.black};
 	`,
 };
