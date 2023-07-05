@@ -9,8 +9,11 @@ import { THEME } from "../utils/constants";
 import diagonalArrow from "../assets/diagonalArrow.svg";
 import cross from "../assets/cross.svg";
 import hamburgerIcon from "../assets/hamburgerIcon.svg";
+import white_logo from "../assets/white_logo.svg";
+import black_logo from "../assets/black_logo.svg";
 import { useOppositeTheme } from "../utils/useOppositeTheme";
 import { colors } from "../styles/colors";
+import { textTypes } from "../styles/textTypes";
 
 const StyledHeader = styled.div`
 	${({ theme }) => themes[theme]}
@@ -27,51 +30,58 @@ const StyledTop = styled.div`
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	margin: 0 10%;
+	margin: 0 9.08vw;
+`;
+
+const StyledLogo = styled.img`
+	width: 8.56vw;
+	height: 0.87vw;
+	object-fit: contain;
 `;
 
 const StyledButtons = styled.div`
 	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
 	align-items: center;
-	width: 30%;
+	gap: 1.3889vw;
 `;
 
 const StyledBody = styled.div`
 	height: 90vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
-	align-items: flex-start;
-	margin: 0 10%;
+	justify-content: space-between;
 `;
 
 const StyledLinkContainer = styled.div`
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
-	align-items: flex-start;
+	padding-top: 15.22vh;
+	padding-left: 9.08vw;
+	width: 15%;
 `;
 
 const StyledLink = styled(Link)`
+	${textTypes.mainTitles}
 	text-decoration: none;
-	color: ${({ theme }) => (theme === THEME.primary ? colors.white : colors.black)};
-	font-size: 1.6667vw;
-	margin-bottom: 0.6944vw;
-	cursor: pointer;
+	color: ${({ theme, hovered }) =>
+		!hovered ? (theme === THEME.primary ? colors.white : colors.black) : colors.gray};
+	margin-bottom: 0.58vw;
+
+	&:hover {
+		cursor: pointer;
+	}
 `;
 
 const StyledFooter = styled.div`
 	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	align-items: center;
+	padding-left: 9.08vw;
+	padding-bottom: 8.5vh;
+	gap: 5.96vw;
 
 	p {
+		margin: 0;
 		font-size: 0.9722vw;
-		margin-right: 1.3889vw;
-		color: ${({ theme }) => (theme === THEME.primary ? colors.darkGray : colors.lightGray)};
+		color: ${colors.gray};
 
 		&:hover {
 			cursor: pointer;
@@ -79,10 +89,10 @@ const StyledFooter = styled.div`
 	}
 `;
 
-// eslint-disable-next-line react/prop-types
 export default function Header() {
 	const { theme } = useTheme();
 	const [open, setOpen] = useState(false);
+	const [hoveredLink, setHoveredLink] = useState(null);
 
 	const handleMenu = () => {
 		setOpen(!open);
@@ -99,8 +109,10 @@ export default function Header() {
 	return (
 		<StyledHeader theme={theme}>
 			<StyledTop>
-				{theme === THEME.primary ? <p>CHRLY DSIGN</p> : <p>CHRLY DSIGN</p>}
-				{/* <img src="" alt="CHRLY DSIGN LOGO" /> */}
+				<StyledLogo
+					src={theme === THEME.primary ? white_logo : black_logo}
+					alt="CHRLY DSIGN LOGO"
+				/>
 				<StyledButtons>
 					<Button
 						theme={useOppositeTheme()}
@@ -119,27 +131,66 @@ export default function Header() {
 			{open && (
 				<StyledBody>
 					<StyledLinkContainer>
-						<StyledLink theme={theme} onClick={handleMenu} to={paths.landing}>
+						<StyledLink
+							theme={theme}
+							hovered={hoveredLink !== "home"}
+							onMouseEnter={() => setHoveredLink("home")}
+							onMouseLeave={() => setHoveredLink(null)}
+							onClick={handleMenu}
+							to={paths.landing}
+						>
 							Home
 						</StyledLink>
-						<StyledLink theme={theme} onClick={handleMenu} to={paths.aboutUs}>
+						<StyledLink
+							theme={theme}
+							hovered={hoveredLink !== "aboutUs"}
+							onMouseEnter={() => setHoveredLink("aboutUs")}
+							onMouseLeave={() => setHoveredLink(null)}
+							onClick={handleMenu}
+							to={paths.aboutUs}
+						>
 							About Us
 						</StyledLink>
-						<StyledLink theme={theme} onClick={handleMenu} to={paths.landingWorks}>
+						<StyledLink
+							theme={theme}
+							hovered={hoveredLink !== "work"}
+							onMouseEnter={() => setHoveredLink("work")}
+							onMouseLeave={() => setHoveredLink(null)}
+							onClick={handleMenu}
+							to={paths.landingWorks}
+						>
 							Work
 						</StyledLink>
-						<StyledLink theme={theme} onClick={handleMenu} to={paths.aboutUsWhatwedo}>
+						<StyledLink
+							theme={theme}
+							hovered={hoveredLink !== "whatWeDo"}
+							onMouseEnter={() => setHoveredLink("whatWeDo")}
+							onMouseLeave={() => setHoveredLink(null)}
+							onClick={handleMenu}
+							to={paths.aboutUsWhatwedo}
+						>
 							What we do
 						</StyledLink>
-						<StyledLink theme={theme} onClick={handleMenu} to={paths.landingEvolve}>
+						<StyledLink
+							theme={theme}
+							hovered={hoveredLink !== "evolve"}
+							onMouseEnter={() => setHoveredLink("evolve")}
+							onMouseLeave={() => setHoveredLink(null)}
+							onClick={handleMenu}
+							to={paths.landingEvolve}
+						>
 							Evolve
 						</StyledLink>
-						<StyledLink theme={theme} onClick={handleMenu} to={paths.landingAwards}>
+						<StyledLink
+							theme={theme}
+							hovered={hoveredLink !== "awards"}
+							onMouseEnter={() => setHoveredLink("awards")}
+							onMouseLeave={() => setHoveredLink(null)}
+							onClick={handleMenu}
+							to={paths.landingAwards}
+						>
 							Awards
 						</StyledLink>
-						{/* <StyledLink theme={theme} onClick={handleMenu} to={paths.legal}>
-							Legal
-						</StyledLink> */}
 					</StyledLinkContainer>
 					<StyledFooter theme={theme}>
 						<p onClick={sendEmail}>hello@chrlydsign.com</p>

@@ -6,7 +6,7 @@ import { colors } from "../styles/colors";
 
 const StyledButtonIcon = styled.div`
 	width: 1.04vw;
-	height: 1.07vh;
+	height: 0.69vw;
 	margin-left: 0.69vw;
 	background-color: ${({ theme }) => (theme === THEME.primary ? colors.white : colors.black)};
 	mask: ${({ icon }) => `url(${icon}) no-repeat center / contain`};
@@ -17,8 +17,8 @@ const StyledButton = styled.div`
 	${({ theme }) => themes[theme]}
 	font-size: 0.81vw;
 	font-weight: 300;
-	padding: 0.89vh
-		${({ icon, buttonType }) => (icon ? (buttonType === 1 ? "0.93vw" : "1.39vw") : "1.45vw")} 0.89vh
+	padding: 0.58vw
+		${({ icon, buttonType }) => (icon ? (buttonType === 1 ? "0.93vw" : "1.39vw") : "1.45vw")} 0.58vw
 		1.45vw;
 	border: 1px solid ${({ theme }) => (theme === THEME.primary ? colors.white : colors.black)};
 	border-radius: 50px;
