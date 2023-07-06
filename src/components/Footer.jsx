@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import styled from "styled-components";
 import { themes } from "../styles/themes";
 import { THEME } from "../utils/constants";
@@ -11,6 +12,7 @@ import { TextSlice } from "./TextSlice";
 import { sendEmail } from "../utils/sendEmail";
 import diagonalArrow from "../assets/diagonalArrow.svg";
 import { openLink } from "../utils/openLink";
+import useAnimeOnView from "../utils/useAnimeOnView";
 
 const StyledFooter = styled.section`
 	${({ theme }) => themes[theme]}
@@ -44,7 +46,6 @@ const StyledLogoContainer = styled.div`
 
 const StyledLogo = styled.img`
 	width: 12vw;
-	height: 1.88vh;
 	object-fit: contain;
 `;
 
@@ -63,6 +64,10 @@ const StyledLink = styled(Link)`
 	font-weight: 300;
 	font-size: 1.5vw;
 	cursor: pointer;
+
+	//animation
+	opacity: ${({ isvisible }) => isvisible};
+	transition: opacity 1s linear;
 `;
 
 const StyledMailsContainer = styled.div`
@@ -81,7 +86,7 @@ const StyledMailTitle = styled.div`
 	font-size: 1.27vw;
 	padding-bottom: 0.63vh;
 `;
-const StyledMaillink = styled.p`
+const StyledMaillink = styled.div`
 	color: ${({ theme }) => themes[theme]};
 	font-weight: 500;
 	font-size: 1.5vw;
@@ -128,6 +133,15 @@ const StyledSocialLink = styled(Link)`
 	color: ${colors.gray};
 `;
 
+function AnimatedLink({ to, theme, children }) {
+	const [isVisible, elementRef] = useAnimeOnView();
+	return (
+		<StyledLink isvisible={isVisible ? "1" : "0"} theme={theme} to={to} ref={elementRef}>
+			{children}
+		</StyledLink>
+	);
+}
+
 // eslint-disable-next-line react/prop-types
 export default function FooterBase({ theme = THEME.primary }, ref) {
 	return (
@@ -141,24 +155,24 @@ export default function FooterBase({ theme = THEME.primary }, ref) {
 				<TextSlice>Digital Multimedia Branding</TextSlice>
 			</StyledLogoContainer>
 			<StyledLinkContainer theme={theme}>
-				<StyledLink theme={theme} to={paths.landing}>
+				<AnimatedLink theme={theme} to={paths.landing}>
 					Home
-				</StyledLink>
-				<StyledLink theme={theme} to={paths.aboutUs}>
+				</AnimatedLink>
+				<AnimatedLink theme={theme} to={paths.aboutUs}>
 					About Us
-				</StyledLink>
-				<StyledLink theme={theme} to={paths.landingWorks}>
+				</AnimatedLink>
+				<AnimatedLink theme={theme} to={paths.landingWorks}>
 					Work
-				</StyledLink>
-				<StyledLink theme={theme} to={paths.aboutUsWhatwedo}>
+				</AnimatedLink>
+				<AnimatedLink theme={theme} to={paths.aboutUsWhatwedo}>
 					What we do
-				</StyledLink>
-				<StyledLink theme={theme} to={paths.landingEvolve}>
+				</AnimatedLink>
+				<AnimatedLink theme={theme} to={paths.landingEvolve}>
 					Evolve
-				</StyledLink>
-				<StyledLink theme={theme} to={paths.landingAwards}>
+				</AnimatedLink>
+				<AnimatedLink theme={theme} to={paths.landingAwards}>
 					Awards
-				</StyledLink>
+				</AnimatedLink>
 			</StyledLinkContainer>
 			<StyledMailsContainer theme={theme}>
 				<StyledMail>

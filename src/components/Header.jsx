@@ -37,7 +37,6 @@ const StyledTop = styled.div`
 
 const StyledLogo = styled.img`
 	width: 8.56vw;
-	height: 0.87vw;
 	object-fit: contain;
 `;
 
