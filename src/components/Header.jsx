@@ -65,7 +65,7 @@ const StyledLink = styled(Link)`
 	text-decoration: none;
 	color: ${({ theme, hovered }) =>
 		!hovered ? (theme === THEME.primary ? colors.white : colors.black) : colors.gray};
-	margin-bottom: 0.58vw;
+	padding-bottom: 0.58vw;
 
 	&:hover {
 		cursor: pointer;
@@ -77,15 +77,12 @@ const StyledFooter = styled.div`
 	padding-left: 9.08vw;
 	padding-bottom: 8.5vh;
 	gap: 5.96vw;
+	margin: 0;
+	font-size: 0.9722vw;
+	color: ${colors.gray};
 
-	p {
-		margin: 0;
-		font-size: 0.9722vw;
-		color: ${colors.gray};
-
-		&:hover {
-			cursor: pointer;
-		}
+	&:hover p {
+		cursor: pointer;
 	}
 `;
 
@@ -133,7 +130,7 @@ export default function Header() {
 					<StyledLinkContainer>
 						<StyledLink
 							theme={theme}
-							hovered={hoveredLink !== "home"}
+							hovered={hoveredLink && hoveredLink !== "home"}
 							onMouseEnter={() => setHoveredLink("home")}
 							onMouseLeave={() => setHoveredLink(null)}
 							onClick={handleMenu}
@@ -143,7 +140,7 @@ export default function Header() {
 						</StyledLink>
 						<StyledLink
 							theme={theme}
-							hovered={hoveredLink !== "aboutUs"}
+							hovered={hoveredLink && hoveredLink !== "aboutUs"}
 							onMouseEnter={() => setHoveredLink("aboutUs")}
 							onMouseLeave={() => setHoveredLink(null)}
 							onClick={handleMenu}
@@ -153,7 +150,7 @@ export default function Header() {
 						</StyledLink>
 						<StyledLink
 							theme={theme}
-							hovered={hoveredLink !== "work"}
+							hovered={hoveredLink && hoveredLink !== "work"}
 							onMouseEnter={() => setHoveredLink("work")}
 							onMouseLeave={() => setHoveredLink(null)}
 							onClick={handleMenu}
@@ -163,7 +160,7 @@ export default function Header() {
 						</StyledLink>
 						<StyledLink
 							theme={theme}
-							hovered={hoveredLink !== "whatWeDo"}
+							hovered={hoveredLink && hoveredLink !== "whatWeDo"}
 							onMouseEnter={() => setHoveredLink("whatWeDo")}
 							onMouseLeave={() => setHoveredLink(null)}
 							onClick={handleMenu}
@@ -173,7 +170,7 @@ export default function Header() {
 						</StyledLink>
 						<StyledLink
 							theme={theme}
-							hovered={hoveredLink !== "evolve"}
+							hovered={hoveredLink && hoveredLink !== "evolve"}
 							onMouseEnter={() => setHoveredLink("evolve")}
 							onMouseLeave={() => setHoveredLink(null)}
 							onClick={handleMenu}
@@ -183,7 +180,7 @@ export default function Header() {
 						</StyledLink>
 						<StyledLink
 							theme={theme}
-							hovered={hoveredLink !== "awards"}
+							hovered={hoveredLink && hoveredLink !== "awards"}
 							onMouseEnter={() => setHoveredLink("awards")}
 							onMouseLeave={() => setHoveredLink(null)}
 							onClick={handleMenu}
