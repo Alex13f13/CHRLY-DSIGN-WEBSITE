@@ -67,6 +67,7 @@ const StyledLink = styled(Link)`
 	color: ${({ theme, hovered }) =>
 		!hovered ? (theme === THEME.primary ? colors.white : colors.black) : colors.gray};
 	padding-bottom: 0.58vw;
+	transition: color 0.3s linear;
 
 	&:hover {
 		cursor: pointer;
