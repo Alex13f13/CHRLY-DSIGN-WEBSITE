@@ -14,6 +14,8 @@ import black_logo from "../assets/black_logo.svg";
 import { useOppositeTheme } from "../utils/useOppositeTheme";
 import { colors } from "../styles/colors";
 import { textTypes } from "../styles/textTypes";
+import { sendEmail } from "../utils/sendEmail";
+import { openLink } from "../utils/openLink";
 
 const StyledHeader = styled.div`
 	${({ theme }) => themes[theme]}
@@ -93,14 +95,7 @@ export default function Header() {
 
 	const handleMenu = () => {
 		setOpen(!open);
-	};
-
-	const sendEmail = () => {
-		window.open("mailto:hello@chrlydsign.com");
-	};
-
-	const instagram = () => {
-		window.open("https://instagram.com/chrly_dsign?igshid=OGQ5ZDc2ODk2ZA==");
+		setHoveredLink(null);
 	};
 
 	return (
@@ -113,7 +108,7 @@ export default function Header() {
 				<StyledButtons>
 					<Button
 						theme={useOppositeTheme()}
-						onClick={sendEmail}
+						onClick={() => sendEmail("hello@chrlydsign.com")}
 						text="LET’S TALK"
 						icon={diagonalArrow}
 						buttonType={2}
@@ -190,8 +185,12 @@ export default function Header() {
 						</StyledLink>
 					</StyledLinkContainer>
 					<StyledFooter theme={theme}>
-						<p onClick={sendEmail}>hello@chrlydsign.com</p>
-						<p onClick={instagram}>Follow on Instagram</p>
+						<p onClick={() => sendEmail("hello@chrlydsign.com")}>hello@chrlydsign.com</p>
+						<p
+							onClick={() => openLink("https://instagram.com/chrly_dsign?igshid=OGQ5ZDc2ODk2ZA==")}
+						>
+							Follow on Instagram
+						</p>
 					</StyledFooter>
 				</StyledBody>
 			)}
