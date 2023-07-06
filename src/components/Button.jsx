@@ -16,9 +16,9 @@ const StyledButtonIcon = styled.div`
 const StyledButton = styled.div`
 	${({ theme }) => themes[theme]}
 	font-size: 0.81vw;
-	font-weight: 300;
-	padding: 0.58vw
-		${({ icon, buttonType }) => (icon ? (buttonType === 1 ? "0.93vw" : "1.39vw") : "1.45vw")} 0.58vw
+	font-weight: 400;
+	padding: 0.81vh
+		${({ icon, buttonType }) => (icon ? (buttonType === 1 ? "0.93vw" : "1.39vw") : "1.45vw")} 0.81vh
 		1.45vw;
 	border: 1px solid ${({ theme }) => (theme === THEME.primary ? colors.white : colors.black)};
 	border-radius: 50px;

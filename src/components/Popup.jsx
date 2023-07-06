@@ -12,17 +12,16 @@ import { colors } from "../styles/colors";
 
 const PopupWrapper = styled.div`
 	${({ theme }) => themes[theme]}
-	border: 0.138888889vw solid ${({ theme }) =>
-		theme === THEME.primary ? colors.white : colors.black};
-	border-radius: 50px;
+	border: 1px solid ${({ theme }) => (theme === THEME.primary ? colors.white : colors.black)};
+	border-radius: 30px;
 	position: fixed;
-	bottom: 6vh;
-	left: 10%;
-	width: 80%;
-	height: 4vw;
+	bottom: 6.45vh;
+	left: 7.58vw;
+	/* width: 84.61vw; */
+	height: 6.98vh;
 	z-index: 100;
-	font-size: 0.9vw;
-	font-weight: 500;
+	font-size: 1.39vw;
+	font-weight: 300;
 	display: flex;
 	align-items: center;
 `;
@@ -30,15 +29,14 @@ const PopupWrapper = styled.div`
 const PopupContent = styled.div`
 	width: 100%;
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
-	padding: 0 2.777777778vw;
+	padding: 1.97vh 2.66vw;
+	gap: 19.56vw;
 `;
 
 const ButtonsContent = styled.div`
 	display: flex;
-	justify-content: space-between;
-	width: 20%;
+	gap: 1.39vw;
 `;
 
 export default function Popup() {
