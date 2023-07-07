@@ -25,10 +25,26 @@ const StyledButton = styled.div`
 	cursor: pointer;
 	display: flex;
 	align-items: center;
+
+	//Animation
 	transition: background-color 0.5s ease, color 0.5s ease, border 0.5s ease;
+	/* transition: background-image 0.8s ease, background-size 0.8s ease, background-position 0.8s ease,
+		color 0.8s ease, border 0.8s ease;
+	background-size: 250% auto;
+	background-image: linear-gradient(
+		to right,
+		${({ theme }) => (theme === THEME.secondary ? colors.black : colors.white)} 0%,
+		${({ theme }) => (theme === THEME.secondary ? colors.black : colors.white)} 51%,
+		${({ theme }) => (theme === THEME.secondary ? colors.white : colors.black)} 52%,
+		${({ theme }) => (theme === THEME.secondary ? colors.white : colors.black)} 100%
+	);
+	background-position: right bottom; */
 
 	&:hover {
+		//Animation
 		background-color: ${({ theme }) => (theme === THEME.primary ? colors.white : colors.black)};
+		/* background-position: left top; */
+
 		color: ${({ theme }) => (theme === THEME.primary ? colors.black : colors.white)};
 		border: 1px solid ${({ theme }) => (theme === THEME.primary ? colors.black : colors.white)};
 
