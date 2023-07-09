@@ -35,13 +35,16 @@ export const useWheel = (stepsRefs = []) => {
 		if (deltaY > 0) {
 			// Scroll down
 			setIsScrollingDown(true);
-			if (sectionRectBottom <= window.innerHeight && currentStep < stepsRefs.length - 1) {
+			if (
+				sectionRectBottom <= window.innerHeight + window.innerHeight * 0.1 &&
+				currentStep < stepsRefs.length - 1
+			) {
 				setCurrentStep(currentStep + 1);
 			}
 		} else {
 			// Scroll up
 			setIsScrollingDown(false);
-			if (sectionRectTop >= 0 && currentStep > 0) {
+			if (sectionRectTop >= 0 - window.innerHeight * 0.1 && currentStep > 0) {
 				setCurrentStep(currentStep - 1);
 			}
 		}

@@ -19,7 +19,7 @@ const StyledLegal = styled.div`
 
 const StyleTitle = styled.div`
 	width: 53.76vw;
-	margin-top: 9.54vh;
+	margin-top: 19.54vh;
 	margin-left: 7.64vw;
 `;
 
@@ -84,8 +84,8 @@ const StyledDiv = styled.div`
 	transition: opacity 1s linear;
 `;
 
-function AnimatedDiv({ children }) {
-	const [isVisible, elementRef] = useAnimeOnView(0);
+function AnimatedDiv({ children, threshold = 0 }) {
+	const [isVisible, elementRef] = useAnimeOnView(threshold);
 	return (
 		<StyledDiv isvisible={isVisible ? "1" : "0"} ref={elementRef}>
 			{children}
@@ -115,8 +115,8 @@ export default function Legal() {
 						<AnimatedDiv>Privacy Policy</AnimatedDiv>
 					</TextSlice>
 				</StyledSubTitle>
-				<StyledInfoContainer>
-					<AnimatedDiv>
+				<AnimatedDiv threshold={0.2}>
+					<StyledInfoContainer>
 						<StyledInfo>
 							<TextSlice textStyles={TEXT_TYPE.h6Main}>Last updated: 17 March 2023</TextSlice>
 							<TextSlice textStyles={TEXT_TYPE.paragraph}>
@@ -184,8 +184,8 @@ export default function Legal() {
 								</StyledLink>
 							</TextSlice>
 						</StyledInfo>
-					</AnimatedDiv>
-				</StyledInfoContainer>
+					</StyledInfoContainer>
+				</AnimatedDiv>
 			</StyleContainer>
 			<Footer theme={theme} />
 		</StyledLegal>
