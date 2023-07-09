@@ -102,6 +102,7 @@ function AnimatedDiv({ children }) {
 export default function Cookies() {
 	const { theme, selectTheme } = useTheme();
 	useEffect(() => {
+		window.scrollTo({ top: 0, behavior: "smooth" });
 		selectTheme(THEME.primary);
 	}, []);
 

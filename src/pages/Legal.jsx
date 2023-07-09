@@ -96,6 +96,7 @@ function AnimatedDiv({ children }) {
 export default function Legal() {
 	const { theme, selectTheme } = useTheme();
 	useEffect(() => {
+		window.scrollTo({ top: 0, behavior: "smooth" });
 		selectTheme(THEME.primary);
 	}, []);
 
