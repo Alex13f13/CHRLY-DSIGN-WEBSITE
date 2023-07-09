@@ -74,7 +74,7 @@ export const ScrollableSection = ({
 			const sliceRect = sliceElement.getBoundingClientRect();
 			const containerRect = containerElement.getBoundingClientRect();
 
-			const paddingLeft = containerRect.width * 0.08;
+			const paddingLeft = containerRect.width * 0.07;
 
 			const scrollLeft =
 				sliceRect.left - containerRect.left + containerElement.scrollLeft - paddingLeft;

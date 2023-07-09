@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import video from "../../assets/video.mp4";
 
 const StyledVideo = styled.div`
 	height: 100%;

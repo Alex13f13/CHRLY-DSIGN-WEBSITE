@@ -9,34 +9,61 @@ const StyledIntro = styled.div`
 	width: 100%;
 `;
 
+const StyledParagraphContainer = styled.div`
+	margin-top: ${({ onlyParagraph }) => (onlyParagraph ? "29.54vh" : "37.96vh")};
+	transition: margin-top 0.2s linear;
+	margin-left: 9.03vw;
+	width: 68vw;
+`;
+
+const StyledParagraphAnim = styled.div`
+	animation: ${({ paragraphOnView }) => (paragraphOnView ? "out" : "in")} 0.8s forwards;
+	@keyframes in {
+		0% {
+			transform: translateX(-100%);
+			opacity: 0;
+		}
+		100% {
+			transform: translateX(0);
+			opacity: 1;
+		}
+	}
+	@keyframes out {
+		0% {
+			transform: translateX(0);
+			opacity: 1;
+		}
+		100% {
+			transform: translateX(-100%);
+			opacity: 0;
+		}
+	}
+`;
+
 export default function Intro({ currentStep, steps }) {
+	const paragraphOnView = currentStep !== 1 && currentStep !== 2;
+	const onlyParagraph = currentStep !== 1;
 	return (
 		<StyledIntro>
-			<TextSlice
-				textStyles={TEXT_TYPE.mainText}
-				textExtraStyles={{
-					height: "40%",
-					marginLeft: "10%",
-					width: "48%",
-					display: "flex",
-					alignItems: "center",
-					justifyContent: "center",
-				}}
-			>
-				Welcome to CHRLY DSIGN, the award winning Digital Multimedia Branding agency that makes
-				digital brands evolve so much, their big dreams become tiny.
-			</TextSlice>
+			<StyledParagraphContainer onlyParagraph={onlyParagraph}>
+				<StyledParagraphAnim paragraphOnView={paragraphOnView}>
+					<TextSlice textStyles={TEXT_TYPE.mainText}>
+						Welcome to CHRLY DSIGN, the award winning Digital Multimedia Branding agency that makes
+						digital brands evolve so much, their big dreams become tiny.
+					</TextSlice>
+				</StyledParagraphAnim>
+			</StyledParagraphContainer>
 			<ScrollableSection
 				texts={["BRANDING ", "DESIGN", "MOTION", "IDENTIFY", "INTERFACE", "EVOLUTION"]}
-				textStyles={TEXT_TYPE.h1Bold}
+				textStyles={TEXT_TYPE.h2Main}
 				currentStep={currentStep}
 				scrollSteps={steps}
 				animSectIn={ANIMATION.fadeIn}
 				animSectOut={ANIMATION.fadeOut}
 				sectionStyles={{
 					width: "100%",
-					height: "40%",
-					paddingLeft: "9%",
+					paddingLeft: "8vw",
+					paddingTop: "8.59vh",
 				}}
 				textExtraStyles={{
 					marginRight: "1.5%",
