@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-export default function useAnimeOnView({ threshold = 0.8 } = {}) {
+export default function useAnimeOnView(threshold = 0.8) {
 	const [isVisible, setIsVisible] = useState(false);
 	const elementRef = useRef(null);
 
