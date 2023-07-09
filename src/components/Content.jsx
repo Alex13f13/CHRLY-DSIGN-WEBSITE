@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 const StyledContent = styled.div`
-	margin-top: 10vh;
+	/* margin-top: 10vh; */
 `;
 
 export const StyledHidenContent = styled.div`
 	overflow: hidden;
 	${({ scrolleable }) => scrolleable && "overflow-y: scroll;"}
-	height: 90vh;
+	height: 100vh;
 	position: relative;
 	scroll-behavior: smooth;
 	::-webkit-scrollbar {

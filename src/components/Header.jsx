@@ -19,6 +19,7 @@ import { openLink } from "../utils/openLink";
 
 const StyledHeader = styled.div`
 	${({ theme }) => themes[theme]}
+	background-color:${({ open }) => !open && "transparent"};
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -99,7 +100,7 @@ export default function Header() {
 	};
 
 	return (
-		<StyledHeader theme={theme}>
+		<StyledHeader open={open} theme={theme}>
 			<StyledTop>
 				<StyledLogo
 					src={theme === THEME.primary ? white_logo : black_logo}

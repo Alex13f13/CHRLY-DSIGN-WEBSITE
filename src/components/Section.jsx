@@ -5,7 +5,7 @@ import { forwardRef } from "react";
 
 const StyledSection = styled.section`
 	${({ theme }) => themes[theme]}
-	height: 90vh;
+	height: 100vh;
 	overflow: hidden;
 `;
 
