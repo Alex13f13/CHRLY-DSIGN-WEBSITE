@@ -35,3 +35,21 @@ export const moveRight = keyframes`
     transform: translateX(0);
   }
 `;
+
+export const scaleIn = keyframes`
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
+  }
+`;
+
+export const scaleOut = keyframes`
+  from {
+    transform: scale(1.5);
+  }
+  to {
+    transform: scale(1);
+  }
+`;

@@ -10,7 +10,6 @@ import { Footer } from "../../components/Footer";
 import { StyledHidenContent } from "../../components/Content";
 import Video from "./Video";
 import Intro from "./Intro";
-import Offer from "./Offer";
 import WorkList from "./WorkList";
 import OneHundredPercent from "./OneHundredPercent";
 import Awards from "./Awards";
@@ -29,9 +28,10 @@ export default function Landing() {
 			(stepsRefs[4].current = node),
 			(stepsRefs[5].current = node),
 			(stepsRefs[6].current = node),
-			(stepsRefs[7].current = node)
+			(stepsRefs[7].current = node),
+			(stepsRefs[8].current = node),
+			(stepsRefs[9].current = node)
 		),
-		offer: (node) => ((stepsRefs[8].current = node), (stepsRefs[9].current = node)),
 		workList: stepsRefs[10],
 		oneHundredPercent: stepsRefs[11],
 		awards: stepsRefs[12],
@@ -52,10 +52,7 @@ export default function Landing() {
 				<Video />
 			</Section>
 			<Section theme={theme} ref={allStepsRefs?.intro}>
-				<Intro currentStep={currentStep} steps={[2, 3, 4, 5, 6, 7]} />
-			</Section>
-			<Section theme={theme} ref={allStepsRefs?.offer}>
-				<Offer currentStep={currentStep} steps={[8, 9]} />
+				<Intro currentStep={currentStep} steps={{ intro: [2, 3, 4, 5, 6, 7], offer: [8, 9] }} />
 			</Section>
 			<BigSection theme={theme} ref={allStepsRefs?.workList}>
 				<WorkList />

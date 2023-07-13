@@ -1,8 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 import styled from "styled-components";
 import { TEXT_TYPE, ANIMATION } from "../../utils/constants";
-import { ScrollableSection } from "../../components/ScrollableSection";
+import { ScrollableIntroSection } from "../../components/Landing/ScrollableIntroSection";
 import { TextSlice } from "../../components/TextSlice";
+import { useState, useEffect } from "react";
 
 const StyledIntro = styled.div`
 	height: 100%;
@@ -10,8 +12,15 @@ const StyledIntro = styled.div`
 `;
 
 const StyledParagraphContainer = styled.div`
-	margin-top: ${({ onlyParagraph }) => (onlyParagraph ? "29.54vh" : "37.96vh")};
+	margin-top: ${({ onlyParagraph, isRenderedIntro }) =>
+		isRenderedIntro ? (onlyParagraph ? "29.54vh" : "37.96vh") : 0};
 	transition: margin-top 0.2s linear;
+	margin-left: 9.03vw;
+	width: 68vw;
+`;
+
+const StyledParagraph2Container = styled.div`
+	margin-top: 7.61vh;
 	margin-left: 9.03vw;
 	width: 68vw;
 `;
@@ -40,24 +49,67 @@ const StyledParagraphAnim = styled.div`
 	}
 `;
 
+const StyledParagraphAnim2 = styled.div`
+	animation: ${({ paragraphOnView2 }) => (!paragraphOnView2 ? "out2" : "in2")} 0.8s forwards;
+	@keyframes in2 {
+		0% {
+			transform: translateY(100%);
+			opacity: 0;
+		}
+		100% {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+	@keyframes out2 {
+		0% {
+			transform: translateY(0);
+			opacity: 1;
+		}
+		100% {
+			transform: translateY(100%);
+			opacity: 0;
+		}
+	}
+`;
+
 export default function Intro({ currentStep, steps }) {
 	const paragraphOnView = currentStep !== 1 && currentStep !== 2;
 	const onlyParagraph = currentStep !== 1;
+	const introOnView = steps.intro[steps.intro.length - 1] > currentStep - 1;
+	const offerOnView = steps.offer.includes(currentStep);
+	// const scrollSteps = [...steps.intro, ...steps.offer];
+
+	const [isRenderedIntro, setIsRenderedIntro] = useState(true);
+	const [isRenderedOffer, setIsRenderedOffer] = useState(true);
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setIsRenderedIntro(introOnView);
+			setIsRenderedOffer(offerOnView);
+		}, 200);
+
+		return () => clearTimeout(timer);
+	}, [currentStep]);
+
 	return (
 		<StyledIntro>
-			<StyledParagraphContainer onlyParagraph={onlyParagraph}>
+			<StyledParagraphContainer onlyParagraph={onlyParagraph} isRenderedIntro={isRenderedIntro}>
 				<StyledParagraphAnim paragraphOnView={paragraphOnView}>
-					<TextSlice textStyles={TEXT_TYPE.mainText}>
-						Welcome to CHRLY DSIGN, the award winning Digital Multimedia Branding agency that makes
-						digital brands evolve so much, their big dreams become tiny.
-					</TextSlice>
+					{isRenderedIntro && (
+						<TextSlice textStyles={TEXT_TYPE.mainText}>
+							Welcome to CHRLY DSIGN, the award winning Digital Multimedia Branding agency that
+							makes digital brands evolve so much, their big dreams become tiny.
+						</TextSlice>
+					)}
 				</StyledParagraphAnim>
 			</StyledParagraphContainer>
-			<ScrollableSection
+			<ScrollableIntroSection
 				texts={["BRANDING ", "DESIGN", "MOTION", "IDENTIFY", "INTERFACE", "EVOLUTION"]}
 				textStyles={TEXT_TYPE.h2Main}
 				currentStep={currentStep}
-				scrollSteps={steps}
+				scrollSteps={steps.intro}
+				lastSteps={steps.offer}
 				animSectIn={ANIMATION.fadeIn}
 				animSectOut={ANIMATION.fadeOut}
 				sectionStyles={{
@@ -68,9 +120,18 @@ export default function Intro({ currentStep, steps }) {
 				textExtraStyles={{
 					marginRight: "1.5%",
 				}}
-			>
-				<div style={{ flex: "0 0 auto", marginLeft: "15%", marginRight: "15%" }}></div>
-			</ScrollableSection>
+			/>
+			<StyledParagraph2Container>
+				<StyledParagraphAnim2 paragraphOnView2={offerOnView}>
+					{isRenderedOffer && (
+						<TextSlice textStyles={TEXT_TYPE.mainText}>
+							Digital Brands are the future in the now. Why then use the same approach of the last
+							80 years? By understanding their true nature, we provide the ultimate digital brand
+							push that will get them on the path to their dream results.
+						</TextSlice>
+					)}
+				</StyledParagraphAnim2>
+			</StyledParagraph2Container>
 		</StyledIntro>
 	);
 }

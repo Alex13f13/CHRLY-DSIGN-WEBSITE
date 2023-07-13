@@ -10,6 +10,8 @@ export const ANIMATION = {
 	slide: "slide",
   moveLeft: "moveLeft",
   moveRight: "moveRight",
+	scaleIn: "scaleIn",
+  scaleOut: "scaleOut",
 };
 
 export const TEXT_TYPE = {
